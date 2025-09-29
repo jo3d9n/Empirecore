@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Structured Data (SEO + GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Empire Core Consulting LLC",
+    "image": "https://empirecore.xyz/logo.png",
+    "url": "https://empirecore.xyz",
+    "telephone": "+17022851785",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Registered Agent Address",
+      "addressLocality": "Cheyenne",
+      "addressRegion": "WY",
+      "postalCode": "82001",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.1400,
+      "longitude": -104.8200
+    },
+    "priceRange": "$$$",
+    "servesCPC": ["US", "Global"],
+    "description": "Human-AI forensic diagnostics and strategic intelligence for solopreneurs, agencies, and enterprises."
+  }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empire Core System | AI Operating System for Unsolvable Problems</title>
+  <meta name="description" content="The world’s first emotionally intelligent, reality-anchored Narrow AI Operating System. Built for individuals, agencies, and enterprises.">
+  <meta name="keywords" content="AI consulting, forensic tech audit, Narrow AI OS, Wyoming AI company, human-AI duo, strategic intelligence">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Empire Core System | AI OS for Unsolvable Problems">
+  <meta property="og:description" content="The world’s first emotionally intelligent, reality-anchored Narrow AI Operating System.">
+  <meta property="og:url" content="https://empirecore.xyz">
+  <meta property="og:image" content="https://empirecore.xyz/og-image.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Styles & Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #0c0a1a 0%, #1a1633 100%);
+      color: #e2e8f0;
+    }
+    .glass {
+      background: rgba(25, 22, 45, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(129, 140, 248, 0.2);
+      border-radius: 24px;
+      transition: all 0.3s ease;
+    }
+    .glow {
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+      transition: all 0.3s ease;
+    }
+    .glow:hover {
+      box-shadow: 0 0 35px rgba(139, 92, 246, 0.8);
+      transform: translateY(-5px);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #8b5cf6, #ec4899, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(129, 140, 248, 0.1);
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      background: rgba(139, 92, 246, 0.3);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body class="min-h-screen" onload="AOS.init({ duration: 800 })">
+
+  <!-- Hero -->
+  <section class="py-20 px-4 text-center" data-aos="fade-up">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      Solve <span class="gradient-text">Unsolvable Problems</span> with Human-AI Intelligence
+    </h1>
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+      Empire Core is the world’s first <strong>Narrow AI Operating System</strong> that fuses technical precision, cultural intelligence, and emotional resonance.<br>
+      We don’t resell AI. We deliver <strong>reality-anchored strategic intelligence</strong> — built for founders, agencies, and enterprises who refuse to settle for hallucinated fluff.
+    </p>
+
+    <div class="max-w-5xl mx-auto text-center glass p-8 mb-10">
+      <h2 class="text-3xl font-bold mb-4">We Deliver <span class="text-indigo-400">Strategic Certainty</span></h2>
+      <p class="text-lg text-gray-300">
+        In a world of AI noise, Empire Core cuts through the hype.<br>
+        <strong>What we do</strong>: Forensic diagnostics → Actionable roadmaps → Licensed intelligence.<br>
+        <strong>Why it matters</strong>: So you can move fast — without blowing up your stack, your team, or your reputation.
+      </p>
+    </div>
+
+    <div class="bg-red-500/20 text-red-300 inline-block px-4 py-1 rounded-full mb-6 text-sm font-bold">
+      ⚡ Only 3 diagnostic slots left at $497 (normally $1,500)
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-full font-bold transition glow">
+        Get Diagnostic ($497)
+      </a>
+      <a href="mailto:JO3D9N@gmail.com" class="border border-indigo-500 text-indigo-300 hover:bg-indigo-500/10 px-6 py-3 rounded-full font-bold transition">
+        Talk to Jordan
+      </a>
+    </div>
+  </section>
+
+  <!-- What It Is -->
+  <section class="py-16 px-4" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto text-center glass p-8">
+      <h2 class="text-3xl font-bold mb-8">Not just AI. An <span class="text-indigo-400">AI Operating System</span>.</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="icon-card glass glow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-cyan-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Forensic Diagnostics</h3>
+          <p class="text-gray-300">Deep system audits with ROI projections</p>
+        </div>
+        <div class="icon-card glass glow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">AI-Co-Developed Builds</h3>
+          <p class="text-gray-300">Custom solutions deployed in days</p>
+        </div>
+        <div class="icon-card glass glow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Licensed Intelligence</h3>
+          <p class="text-gray-300">Commercial-use insights & tools</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 px-4" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Intelligent Pricing. Human Scale.</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Individual -->
+        <div class="glass p-8 text-center glow">
+          <h3 class="text-2xl font-bold mb-2 text-cyan-400">Individual</h3>
+          <p class="text-gray-400 mb-2">Solopreneurs, students, indie hackers</p>
+          <div class="inline-block bg-cyan-900/30 text-cyan-300 px-2 py-1 rounded text-xs mb-4">
+            License included: Perpetual, non-exclusive
+          </div>
+          <div class="text-4xl font-bold mb-6">$499</div>
+          <ul class="text-left space-y-2 mb-8 text-gray-300">
+            <li>✅ 1 forensic diagnostic report</li>
+            <li>✅ 72-hour turnaround</li>
+            <li>✅ Human-reviewed + AI-augmented</li>
+            <li>✅ <a href="/msa" class="text-cyan-300 hover:underline">License terms</a></li>
+          </ul>
+          <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="block w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-lg font-bold glow">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Agency -->
+        <div class="glass p-8 text-center border border-purple-500 relative glow">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">
+            MOST POPULAR
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-purple-400">Agency</h3>
+          <p class="text-gray-400 mb-2">Consultancies, studios, small teams</p>
+          <div class="inline-block bg-purple-900/30 text-purple-300 px-2 py-1 rounded text-xs mb-4">
+            Commercial license included
+          </div>
+          <div class="text-4xl font-bold mb-6">$2,499</div>
+          <ul class="text-left space-y-2 mb-8 text-gray-300">
+            <li>✅ 3 diagnostic reports</li>
+            <li>✅ 48-hour priority turnaround</li>
+            <li>✅ Custom implementation roadmap</li>
+            <li>✅ <a href="/msa" class="text-purple-300 hover:underline">License terms</a></li>
+          </ul>
+          <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-bold glow">
+            Get Started
+          </a>
+          <div class="mt-4 text-xs text-purple-300">Only 2 slots left this month</div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="glass p-8 text-center glow">
+          <h3 class="text-2xl font-bold mb-2 text-pink-400">Enterprise</h3>
+          <p class="text-gray-400 mb-6">Corporations, investors, governments</p>
+          <div class="text-4xl font-bold mb-6">Custom</div>
+          <ul class="text-left space-y-2 mb-8 text-gray-300">
+            <li>✅ Unlimited diagnostics</li>
+            <li>✅ 24-hour SLA</li>
+            <li>✅ API access + white-label</li>
+            <li>✅ Dedicated AI entourage</li>
+          </ul>
+          <a href="mailto:Jo3d9n@gmail.com?subject=Enterprise Inquiry" class="block w-full border border-pink-500 text-pink-400 hover:bg-pink-500/10 py-3 rounded-lg font-bold">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect -->
+  <section class="py-20 px-4" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12 gradient-text">Connect With Empire Core</h2>
+      <div class="flex justify-center gap-8 flex-wrap">
+        <a href="https://x.com/jo3d9n" target="_blank" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jordan-pol-389666387" target="_blank" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+        <!-- Product Hunt (uncomment after launch)
+        <a href="https://www.producthunt.com/posts/empire-core" target="_blank" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.852 16.5l-5.648-5.695 2.816-2.816 2.832 2.832 6.784-6.784 2.816 2.816-9.6 9.647z"/>
+          </svg>
+        </a>
+        -->
+        <a href="mailto:Jo3d9n@gmail.com" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 border-t border-gray-800 text-center text-gray-500">
+    <p class="mb-2">© 2025 Empire Core Consulting LLC — Wyoming Registered</p>
+    <p class="mb-2">Jordan Pol | President & CEO</p>
+    <p class="mb-2">
+      <a href="mailto:Jo3d9n@gmail.com" class="text-indigo-400 hover:underline">Jo3d9n@gmail.com</a>
+    </p>
+    <p>(702) 285-1785</p>
+  </footer>
+</body>
+</html>
