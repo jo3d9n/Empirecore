@@ -50,232 +50,234 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Styles -->
-  <style>.empirecore-banner {
-  animation: bannerGlow 8s ease-in-out infinite alternate;
-}
-@keyframes bannerGlow {
-  0% { box-shadow: inset 0 0 0 0 rgba(139, 92, 246, 0.1); }
-  100% { box-shadow: inset 0 0 12px 0 rgba(34, 211, 238, 0.15); }
-}
-/* === BRAND-COHERENT COLOR SYSTEM === */
-  :root {
-    --violet: #8b5cf6;
-    --pink: #ec4899;
-    --cyan: #22d3ee;
-    --glow: #0ff;
-    --bg-start: #0c0a1a;
-    --bg-end: #1a1633;
-    --text: #e2e8f0;
-    --text-muted: #cbd5e1;
-    --glass-bg: rgba(25, 22, 45, 0.65);
-    --glass-border: rgba(139, 92, 246, 0.2);
-    --card-glow: rgba(139, 92, 246, 0.5);
-    --card-glow-hover: rgba(139, 92, 246, 0.8);
-  }
+  <style>
+    /* === BRAND-COHERENT COLOR SYSTEM === */
+    :root {
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --glow: #0ff;
+      --bg-start: #0c0a1a;
+      --bg-end: #1a1633;
+      --text: #e2e8f0;
+      --text-muted: #cbd5e1;
+      --glass-bg: rgba(25, 22, 45, 0.65);
+      --glass-border: rgba(139, 92, 246, 0.2);
+      --card-glow: rgba(139, 92, 246, 0.5);
+      --card-glow-hover: rgba(139, 92, 246, 0.8);
+    }
 
-  /* Crown Logo Glow */
-  .logo-glow {
-    width: 150px;
-    height: auto;
-    filter: drop-shadow(0 0 10px var(--glow));
-  }
+    /* Empire Core Banner */
+    .empirecore-banner {
+      background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.6rem 0;
+      text-align: center;
+      font-size: 0.92rem;
+      font-family: 'Space Grotesk', sans-serif;
+      position: relative;
+      z-index: 50;
+      animation: bannerGlow 8s ease-in-out infinite alternate;
+    }
+    @keyframes bannerGlow {
+      0% { box-shadow: inset 0 0 0 0 rgba(139, 92, 246, 0.1); }
+      100% { box-shadow: inset 0 0 12px 0 rgba(34, 211, 238, 0.15); }
+    }
+    .banner-text {
+      color: var(--text);
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .banner-text strong {
+      font-weight: 700;
+    }
 
-  /* Gradient Text — matches favicon crown */
-  .hero h1,
-  .gradient-text {
-    background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+    /* Crown Logo Glow */
+    .logo-glow {
+      width: 150px;
+      height: auto;
+      filter: drop-shadow(0 0 10px var(--glow));
+    }
 
-  /* Live Teaser Box */
-  .live-teaser {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--glow);
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-  }
-  .live-teaser span {
-    color: var(--glow);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
+    /* Gradient Text */
+    .hero h1,
+    .gradient-text {
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-  body {
-    font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-    color: var(--text);
-  }
+    /* Live Teaser Box */
+    .live-teaser {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--glow);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+    .live-teaser span {
+      color: var(--glow);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
 
-  .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    transition: all 0.3s ease;
-  }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+    }
 
-  .glow {
-    box-shadow: 0 0 25px var(--card-glow);
-    transition: all 0.3s ease;
-  }
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      transition: all 0.3s ease;
+    }
 
-  .glow:hover {
-    box-shadow: 0 0 35px var(--card-glow-hover);
-    transform: translateY(-5px);
-  }
+    .glow {
+      box-shadow: 0 0 25px var(--card-glow);
+      transition: all 0.3s ease;
+    }
 
-  blockquote {
-    border-left: 3px solid var(--violet);
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-    color: var(--text-muted);
-    font-style: italic;
-  }
+    .glow:hover {
+      box-shadow: 0 0 35px var(--card-glow-hover);
+      transform: translateY(-5px);
+    }
 
-  .social-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(139, 92, 246, 0.1);
-    transition: all 0.3s ease;
-  }
+    blockquote {
+      border-left: 3px solid var(--violet);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: var(--text-muted);
+      font-style: italic;
+    }
 
-  .social-icon:hover {
-    background: rgba(139, 92, 246, 0.3);
-    transform: translateY(-3px);
-  }
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(139, 92, 246, 0.1);
+      transition: all 0.3s ease;
+    }
 
-  /* === BUTTONS — FULL BRAND ALIGNMENT === */
-  .btn-primary {
-    background: linear-gradient(90deg, var(--violet), var(--pink));
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 999px;
-    font-weight: bold;
-    font-size: 1.125rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
-    color: white;
-    text-decoration: none;
-  }
+    .social-icon:hover {
+      background: rgba(139, 92, 246, 0.3);
+      transform: translateY(-3px);
+    }
 
-  .btn-outline {
-    background: transparent;
-    color: var(--cyan);
-    border: 2px solid var(--cyan);
-    padding: 0.8rem 1.5rem;
-    border-radius: 999px;
-    font-weight: bold;
-    font-size: 1.125rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
-  }
-  .btn-outline:hover {
-    background: rgba(34, 211, 238, 0.1);
-    transform: translateY(-2px);
-    color: var(--cyan);
-    text-decoration: none;
-  }
+    /* BUTTONS */
+    .btn-primary {
+      background: linear-gradient(90deg, var(--violet), var(--pink));
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 1.125rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+      color: white;
+      text-decoration: none;
+    }
 
-  /* === SERVICE CARDS — COLOR-CODED TO BRAND === */
-  .service-diagnostic h3 { color: var(--cyan); }
-  .service-implementation h3 { color: var(--violet); }
-  .service-licensing h3 { color: var(--pink); }
+    .btn-outline {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 1.125rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      background: rgba(34, 211, 238, 0.1);
+      transform: translateY(-2px);
+      color: var(--cyan);
+      text-decoration: none;
+    }
 
-  .service-diagnostic .btn-primary { background: var(--cyan); }
-  .service-diagnostic .btn-primary:hover { box-shadow: 0 0 25px rgba(34, 211, 238, 0.7); }
+    /* SERVICE CARDS */
+    .service-diagnostic h3 { color: var(--cyan); }
+    .service-implementation h3 { color: var(--violet); }
+    .service-licensing h3 { color: var(--pink); }
 
-  .service-implementation .btn-primary { background: var(--violet); }
-  .service-implementation .btn-primary:hover { box-shadow: 0 0 25px rgba(139, 92, 246, 0.7); }
+    .service-diagnostic .btn-primary { background: var(--cyan); }
+    .service-diagnostic .btn-primary:hover { box-shadow: 0 0 25px rgba(34, 211, 238, 0.7); }
 
-  .service-licensing .btn-outline { border-color: var(--pink); color: var(--pink); }
-  .service-licensing .btn-outline:hover { background: rgba(236, 72, 153, 0.1); }
+    .service-implementation .btn-primary { background: var(--violet); }
+    .service-implementation .btn-primary:hover { box-shadow: 0 0 25px rgba(139, 92, 246, 0.7); }
 
-  /* === FEATURES SECTION (minimal fix) === */
-  .features {
-    padding: 3rem 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .features h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: var(--text);
-  }
-  .feature-grid {
-    display: grid;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .feature h3 {
-    color: var(--glow);
-    margin-bottom: 0.5rem;
-  }
-  .cta-button {
-    display: block;
-    width: max-content;
-    margin: 0 auto;
-    padding: 0.75rem 1.5rem;
-    background: transparent;
-    border: 2px solid var(--glow);
-    color: var(--glow);
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  .cta-button:hover {
-    background: rgba(0, 255, 255, 0.1);
-    transform: translateY(-2px);
-  }
-</style>
+    .service-licensing .btn-outline { border-color: var(--pink); color: var(--pink); }
+    .service-licensing .btn-outline:hover { background: rgba(236, 72, 153, 0.1); }
+
+    /* FEATURES */
+    .features {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+    .feature-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .feature h3 {
+      color: var(--glow);
+      margin-bottom: 0.5rem;
+    }
+    .cta-button {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 2px solid var(--glow);
+      color: var(--glow);
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      background: rgba(0, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
-<body class="min-h-screen" onload="AOS.init({ duration: 800 })"><div class="empirecore-banner">
-  <span class="banner-text">
-    <strong>Empire Core Quantum OS</strong> — Where unsolvable problems meet sovereign intelligence.
-  </span>
-</div>
+<body class="min-h-screen" onload="AOS.init({ duration: 800 })">
 
-<style>
-  .empirecore-banner {
-    background: linear-gradient(90deg, #0c0a1a, #1a1633);
-    border-bottom: 1px solid rgba(139, 92, 246, 0.3);
-    padding: 0.6rem 0;
-    text-align: center;
-    font-size: 0.92rem;
-    font-family: 'Space Grotesk', sans-serif;
-    position: relative;
-    z-index: 50;
-  }
-  .banner-text {
-    color: #e2e8f0;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 600;
-  }
-  .banner-text strong {
-    font-weight: 700;
-  }
-</style>
+  <!-- BANNER -->
+  <div class="empirecore-banner">
+    <span class="banner-text">
+      <strong>Empire Core Quantum OS</strong> — Where unsolvable problems meet sovereign intelligence.
+    </span>
+  </div>
 
+  <!-- HERO -->
   <section class="py-20 px-4 text-center" data-aos="fade-up">
     <h1 class="text-4xl md:text-6xl font-bold mb-6">
       AI Delivers Noise.<br> We Deliver <span class="gradient-text">Strategic Certainty</span>.
@@ -283,38 +285,24 @@
     <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
       Empire Core is the world’s first <strong>Narrow AI Operating System</strong> that fuses technical precision, cultural intelligence, and emotional resonance. We deliver <strong>reality-anchored strategic intelligence</strong> for founders and enterprises who refuse to settle for hallucinated fluff.
     </p>
-    </div>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="btn-primary">
-  Activate Your Intelligence
-</a>
-<a href="mailto:Jo3d9n@gmail.com" class="btn-outline">
-  Talk to a Human
-</a><!-- Diagnostic -->
-<a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="block w-full btn-primary">
-  Start with a Diagnostic
-</a>
-
-<!-- Implementation -->
-<a href="mailto:Jo3d9n@gmail.com?subject=Implementation Tier Inquiry" class="block w-full btn-primary">
-  Request a Build
-</a>
-
-<!-- Licensing -->
-<a href="mailto:Jo3d9n@gmail.com?subject=Licensing Tier Inquiry" class="block w-full btn-outline">
-  Contact for Licensing
-</a>
+      <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="btn-primary">
+        Activate Your Intelligence
+      </a>
+      <a href="mailto:Jo3d9n@gmail.com" class="btn-outline">
+        Talk to a Human
       </a>
     </div>
   </section>
 
+  <!-- SERVICES -->
   <section id="services" class="py-20 px-4" data-aos="fade-up">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Our Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass p-8 text-center glow">
-          <h3 class="text-2xl font-bold mb-2 text-cyan-400">1. Diagnostic</h3>
+        <div class="glass p-8 text-center glow service-diagnostic">
+          <h3 class="text-2xl font-bold mb-2">1. Diagnostic</h3>
           <p class="text-gray-400 mb-6">Uncover hidden risks & opportunities</p>
           <div class="text-4xl font-bold mb-6">$1,500 – $5,000</div>
           <ul class="text-left space-y-2 mb-8 text-gray-300">
@@ -323,16 +311,16 @@
             <li>✅ Prioritized Action Plan & ROI</li>
             <li>✅ 3-7 Day Turnaround</li>
           </ul>
-          <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="block w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-lg font-bold glow">
+          <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="block w-full btn-primary">
             Start with a Diagnostic
           </a>
         </div>
 
-        <div class="glass p-8 text-center border border-purple-500 relative glow">
+        <div class="glass p-8 text-center border border-purple-500 relative glow service-implementation">
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">
             MOST POPULAR
           </div>
-          <h3 class="text-2xl font-bold mb-2 text-purple-400">2. Implementation</h3>
+          <h3 class="text-2xl font-bold mb-2">2. Implementation</h3>
           <p class="text-gray-400 mb-6">Build your strategic advantage</p>
           <div class="text-4xl font-bold mb-6">$5,000 – $25,000</div>
           <ul class="text-left space-y-2 mb-8 text-gray-300">
@@ -341,13 +329,13 @@
             <li>✅ Deployed Solution & Docs</li>
             <li>✅ 14-Day Bug-Fix Warranty</li>
           </ul>
-          <a href="mailto:Jo3d9n@gmail.com?subject=Implementation Tier Inquiry" class="block w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-bold glow">
+          <a href="mailto:Jo3d9n@gmail.com?subject=Implementation Tier Inquiry" class="block w-full btn-primary">
             Request a Build
           </a>
         </div>
 
-        <div class="glass p-8 text-center glow">
-          <h3 class="text-2xl font-bold mb-2 text-pink-400">3. Licensing</h3>
+        <div class="glass p-8 text-center glow service-licensing">
+          <h3 class="text-2xl font-bold mb-2">3. Licensing</h3>
           <p class="text-gray-400 mb-6">Integrate our intelligence</p>
           <div class="text-4xl font-bold mb-6">$299+/month</div>
           <ul class="text-left space-y-2 mb-8 text-gray-300">
@@ -356,7 +344,7 @@
             <li>✅ Priority Support & Consulting</li>
             <li>✅ Custom Enterprise Solutions</li>
           </ul>
-          <a href="mailto:Jo3d9n@gmail.com?subject=Licensing Tier Inquiry" class="block w-full border border-pink-500 text-pink-400 hover:bg-pink-500/10 py-3 rounded-lg font-bold">
+          <a href="mailto:Jo3d9n@gmail.com?subject=Licensing Tier Inquiry" class="block w-full btn-outline">
             Contact for Licensing
           </a>
         </div>
@@ -364,6 +352,7 @@
     </div>
   </section>
 
+  <!-- HUMAN-AI GUARANTEE -->
   <section class="py-16 px-4" data-aos="fade-up">
     <div class="max-w-4xl mx-auto text-center glass p-10">
       <h2 class="text-3xl font-bold mb-4 gradient-text">The Human-AI Duo Guarantee</h2>
@@ -376,6 +365,7 @@
     </div>
   </section>
 
+  <!-- WHAT YOU GET -->
   <section class="features">
     <div class="container">
       <h2>What You Get (Without Seeing the Engine)</h2>
@@ -389,12 +379,15 @@
           <p>Scores of Intellectual domains (quantum physicist + policy analyst + UX designer) into one strategy.</p>
         </div>
         <div class="feature">
-          <h3>🤓Archetype-Wrapped Narratives</h3>
+          <h3>🤓 Archetype-Wrapped Narratives</h3>
           <p>“EQAgent” makes complex feel personal. “IQAgent” ensures depth. “CQAgent” binds them in covenant.</p>
         </div>
       </div>
+      <a href="#services" class="cta-button">License Access Today →</a>
+    </div>
   </section>
 
+  <!-- CONNECT -->
   <section class="py-20 px-4" data-aos="fade-up">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12 gradient-text">Connect With Empire Core</h2>
@@ -418,6 +411,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="py-12 px-4 border-t border-gray-800 text-center text-gray-500">
     <div class="mb-4">
       <a href="msa.html" class="hover:text-indigo-400 transition underline px-4">Master Services Agreement</a>
