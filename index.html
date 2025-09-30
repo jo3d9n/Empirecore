@@ -20,7 +20,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+  <style>/* Crown Logo Glow */
+.logo-glow {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #93f);
+}
+
+/* Gradient Text */
+.hero h1 {
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+}
+
+/* Live Teaser Box */
+.live-teaser {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #0ff;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+.live-teaser span {
+  color: #0ff;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
     body {
       font-family: 'Space Grotesk', sans-serif;
       background: linear-gradient(135deg, #0c0a1a 0%, #1a1633 100%);
@@ -68,7 +96,38 @@
       transform: translateY(-3px);
     }
   </style>
-</head>
+</head><!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+<!-- For modern browsers -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#000010"><!-- SEO -->
+<meta name="description" content="Empire Core: The first sovereign intelligence engine that fuses quantum physics, behavioral economics, and cultural archetypes to solve unsolvable problems. Licensed access only.">
+<meta name="keywords" content="strategic intelligence, AI engine, unsolvable problems, career lattice, reality anchored AI, Chaotic Aunt, Overthinker, Empire Core, licensed AI, sovereign intelligence">
+
+<!-- GEO -->
+<meta name="geo.region" content="US">
+<meta name="geo.placename" content="Global">
+<meta name="geo.position" content="0;0">
+<meta name="ICBM" content="0, 0">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Empire Core",
+  "url": "https://empirecore.xyz",
+  "logo": "https://empirecore.xyz/crown-logo.png",
+  "sameAs": [
+    "https://linkedin.com/company/empire-core",
+    "https://x.com/empirecore"
+  ],
+  "description": "The first sovereign intelligence engine that fuses quantum physics, behavioral economics, and cultural archetypes to solve unsolvable problems."
+}
+</script>
 <body class="min-h-screen" onload="AOS.init({ duration: 800 })">
 
   <section class="py-20 px-4 text-center" data-aos="fade-up">
@@ -158,7 +217,26 @@
         AI is the tool. You are the client. We are the stewards.
       </blockquote>
     </div>
-  </section>
+  </section><section class="features">
+  <div class="container">
+    <h2>What You Get (Without Seeing the Engine)</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>🎯 Reality-Anchored Strategies</h3>
+        <p>Every output tethered to empirical benchmarks (Henrich, WVS, Lijphart). No hallucinations. Just truth.</p>
+      </div>
+      <div class="feature">
+        <h3>🧠 Advanced Real World Reasoning</h3>
+        <p>Scores of Intellectual domains (quantum physicist + policy analyst + UX designer) into one strategy.</p>
+      </div>
+      <div class="feature">
+        <h3>Archetype-Wrapped Narratives</h3>
+        <p>“Agent” makes complex feel personal. “Agent” ensures depth. “Agent” binds them in covenant.</p>
+      </div>
+    </div>
+    <a href="#contact" class="cta-button">License Access Today →</a>
+  </div>
+</section>
   
   <section class="py-20 px-4" data-aos="fade-up">
     <div class="max-w-4xl mx-auto text-center">
@@ -182,7 +260,10 @@
       </div>
     </div>
   </section>
-
+<footer>
+  <p>© 2025 Empire Core™. All outputs are licensed for client use only. The underlying engine is a proprietary trade secret protected under 18 U.S. Code § 1832. Reverse engineering, scraping, or unauthorized access is strictly prohibited.</p>
+  <p></p>
+</footer>
   <footer class="py-12 px-4 border-t border-gray-800 text-center text-gray-500">
     <div class="mb-4">
       <a href="msa.html" class="hover:text-indigo-400 transition underline px-4">Master Services Agreement</a>
