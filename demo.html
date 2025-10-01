@@ -109,6 +109,102 @@
     <div class="text-center mt-8">
       <a href="/" class="text-cyan-400 hover:underline">← Back to Empire Core</a>
     </div>
+  </div><!-- GAME DEMO SECTION -->
+<section id="game-demo" class="py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8 gradient-text">Next-Gen Battle Royale: Gen Z Edition</h2>
+    <div class="glass mb-6">
+      <p class="text-gray-300 italic">“Build me the next Fortnite Battle Royale—but for Gen Z in 2025.”</p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+      <button id="show-script-btn" class="btn-primary">See Strategy Script</button>
+      <button id="show-code-btn" class="btn-outline">See Engine Snippet</button>
+    </div>
+
+    <!-- Strategy Script Output -->
+    <div id="strategy-script" class="mt-6 hidden">
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-3 text-cyan-400">Narrative & System Design</h3>
+        <p><strong>Core Loop:</strong> “The Collapse” — 100 players preserve cultural artifacts as reality glitches.</p>
+        <p><strong>Economy:</strong> All cosmetics earned via collaboration or real-world actions (e.g., plant a tree → “Rooted” skin).</p>
+        <p><strong>Tech:</strong> Emotion-aware matchmaking, on-device anti-cheat, <40ms latency via edge compute.</p>
+        <p><strong>Cultural Layer:</strong> Post-match “Memory Shard” (AI-generated poem + art) for TikTok sharing.</p>
+        <blockquote class="mt-4 border-l-4 border-violet-500 pl-4 italic text-gray-300">
+          “You’re not building a game. You’re building a <strong>digital hearth</strong>—a place where Gen Z doesn’t just play, but <strong>heals, creates, and belongs</strong>.”
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Engine Code Snippet -->
+    <div id="engine-snippet" class="mt-6 hidden">
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-3 text-pink-400">Engine Snippet (Representative)</h3>
+        <pre class="text-sm text-gray-300 overflow-x-auto p-4 bg-gray-900 rounded-lg">
+<span class="comment">// === CAREER-LATTICE SYNTHESIS ===</span>
+<span class="keyword">def</span> <span class="function">synthesize_genz_battle_royale</span>(query: str) -> Dict:
+    <span class="comment"># Detect cross-domain expertise</span>
+    careers = CareerLattice.detect([
+        "game_designer", "behavioral_economist", 
+        "cultural_anthropologist", "systems_engineer"
+    ])
+    
+    <span class="comment"># Anchor to empirical reality</span>
+    anchor = RealityAnchor.load("pew_genz_2025.json")
+    assert anchor.verified == True
+    
+    <span class="comment"># Generate ethical goals</span>
+    goals = [
+        "Replace domination with co-survival",
+        "Tie rewards to real-world positive action",
+        "Ensure <40ms latency for global fairness"
+    ]
+    
+    <span class="comment"># Compose narrative via archetype fusion</span>
+    narrative = MediaComposer.compose(
+        mode="SOVEREIGN_HEART",
+        archetypes=["Chaotic Aunt", "Overthinker"],
+        emotion="belonging",
+        theme="digital burnout"
+    )
+    
+    <span class="comment"># Score output for cultural resonance</span>
+    score = IntrospectiveAdaptationModule.score(narrative)
+    assert score.cdi >= 0.85  <span class="comment"># Multi-domain synthesis</span>
+    
+    <span class="keyword">return</span> {
+        "career_lattice": careers,
+        "reality_anchor": anchor.id,
+        "narrative": narrative,
+        "ethics_score": score.ethics,
+        "cdi_score": score.cdi
+    }</pre>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="#top" class="text-cyan-400 hover:underline">↑ Back to Top</a>
+    </div>
   </div>
+</section>
+
+<style>
+  .comment { color: #60a5fa; }
+  .keyword { color: #f472b6; font-weight: bold; }
+  .function { color: #34d399; }
+  .hidden { display: none; }
+</style>
+
+<script>
+  document.getElementById('show-script-btn').addEventListener('click', () => {
+    document.getElementById('strategy-script').classList.remove('hidden');
+    document.getElementById('engine-snippet').classList.add('hidden');
+  });
+  
+  document.getElementById('show-code-btn').addEventListener('click', () => {
+    document.getElementById('engine-snippet').classList.remove('hidden');
+    document.getElementById('strategy-script').classList.add('hidden');
+  });
+</script>
 </body>
 </html>
