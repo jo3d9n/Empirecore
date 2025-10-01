@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empire Core Quantum OS | Gen Z Battle Royale Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --bg-start: #0c0a1a;
+      --bg-end: #1a1633;
+      --text: #e2e8f0;
+      --glass-bg: rgba(25, 22, 45, 0.65);
+      --glass-border: rgba(139, 92, 246, 0.2);
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+    }
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 1.5rem;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--violet), var(--pink));
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
+    .comment { color: #60a5fa; }
+    .keyword { color: #f472b6; }
+    .function { color: #34d399; }
+  </style>
+</head>
+<body class="min-h-screen py-12 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
+      Gen Z Battle Royale: “The Collapse”
+    </h1>
+
+    <div class="glass mb-6">
+      <p class="italic text-gray-300">
+        “Build me the next Fortnite Battle Royale—but for Gen Z in 2025.”
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+      <button id="show-strategy-btn" class="btn-primary">See Strategy</button>
+      <button id="show-game-code-btn" class="btn-outline">See Game Code</button>
+    </div>
+
+    <!-- Strategy Output -->
+    <div id="strategy-output" class="mt-6 hidden">
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-3 text-cyan-400">Game Design Overview</h3>
+        <p><strong>Core Loop:</strong> 100 players preserve cultural artifacts as a digital city collapses from “reality decay.”</p>
+        <p><strong>Win Condition:</strong> Teams that collaborate across matches unlock permanent world upgrades (e.g., restored library = safe zone).</p>
+        <p><strong>Economy:</strong> All cosmetics earned via collaboration or real-world actions (e.g., plant a tree → “Rooted” skin).</p>
+        <p><strong>Tech:</strong> Emotion-aware matchmaking, on-device anti-cheat, <40ms latency.</p>
+        <blockquote class="mt-4 border-l-4 border-violet-500 pl-4 italic text-gray-300">
+          “You’re not building a game. You’re building a <strong>digital hearth</strong>—a place where Gen Z doesn’t just play, but <strong>heals, creates, and belongs</strong>.”
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Game Code Snippet -->
+    <div id="game-code-output" class="mt-6 hidden">
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-3 text-pink-400">Frontend Game Logic (Representative)</h3>
+        <pre class="text-sm text-gray-300 overflow-x-auto p-4 bg-gray-900 rounded-lg">
+<span class="comment">// === THE COLLAPSE: GEN Z BATTLE ROYALE ===</span>
+<span class="keyword">class</span> <span class="function">CollapseGame</span> {
+  constructor() {
+    this.artifacts = [];
+    this.team = [];
+    this.decayZone = { radius: 5000, shrinkRate: 0.5 };
+  }
+
+  <span class="keyword">async</span> <span class="function">joinMatch</span>(playerId) {
+    <span class="comment">// Emotion-aware matchmaking (opt-in mic analysis)</span>
+    const mood = await this.analyzeVoiceTone(playerId);
+    return this.findTeamByMood(mood);
+  }
+
+  <span class="keyword">async</span> <span class="function">preserveArtifact</span>(artifactId, players) {
+    <span class="comment">// Requires 3+ players to co-hold for 10s</span>
+    if (players.length >= 3) {
+      await this.unlockCosmetic('collaborator_badge');
+      this.broadcastEvent(`"${artifactId}" preserved!`);
+    }
+  }
+
+  <span class="keyword">async</span> <span class="function">plantTreeIRL</span>(userId) {
+    <span class="comment">// Verified via Eden Reforestation API</span>
+    const verified = await fetch('/api/verify-tree', { 
+      method: 'POST', 
+      body: JSON.stringify({ user: userId }) 
+    });
+    if (verified.ok) {
+      this.unlockSkin(userId, 'Rooted');
+    }
+  }
+
+  <span class="function">renderDecayZone</span>() {
+    <span class="comment">// Glitch shader intensifies as zone shrinks</span>
+    this.glitchIntensity = 1 - (this.decayZone.radius / 5000);
+  }
+}</pre>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/" class="text-cyan-400 hover:underline">← Back to Empire Core</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('show-strategy-btn').addEventListener('click', () => {
+      document.getElementById('strategy-output').classList.remove('hidden');
+      document.getElementById('game-code-output').classList.add('hidden');
+    });
+    
+    document.getElementById('show-game-code-btn').addEventListener('click', () => {
+      document.getElementById('game-code-output').classList.remove('hidden');
+      document.getElementById('strategy-output').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
