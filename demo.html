@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empire Core Quantum OS | Strategic Intelligence Demo</title>
+
+  <!-- Favicon (optional for local demo) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+
+  <!-- SEO -->
+  <meta name="description" content="See Empire Core Quantum OS in action: a sample intelligence dossier for a real-world strategic challenge.">
+  <meta name="keywords" content="AI demo, strategic intelligence, burnout app, Empire Core">
+
+  <!-- CSS Libraries -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --glow: #0ff;
+      --bg-start: #0c0a1a;
+      --bg-end: #1a1633;
+      --text: #e2e8f0;
+      --glass-bg: rgba(25, 22, 45, 0.65);
+      --glass-border: rgba(139, 92, 246, 0.2);
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+    }
+
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 1.5rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--violet), var(--pink));
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--violet);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #cbd5e1;
+      font-style: italic;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body class="min-h-screen" onload="AOS.init({ duration: 800 })">
+
+  <section class="py-20 px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+      Empire Core Quantum OS<br>
+      <span class="gradient-text">Strategic Intelligence Demo</span>
+    </h1>
+    <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+      This is a sample output from our sovereign intelligence engine. No AI fluff — just reality-anchored strategy.
+    </p>
+  </section>
+
+  <section class="py-10 px-4" id="demo">
+    <div class="max-w-3xl mx-auto">
+      <div class="glass mb-6">
+        <p class="text-gray-300 italic">"Build a Web App That Helps Remote Workers Combat Burnout — Launch in 30 Days"</p>
+      </div>
+      <button id="run-demo" class="btn-primary mx-auto block">▶️ Run Sample Demo</button>
+      <div id="demo-output" class="mt-8 hidden">
+        <div class="glass">
+          <h3 class="text-2xl font-bold mb-4 gradient-text">Empire Core Quantum OS — Sample Intelligence Dossier</h3>
+
+          <h4 class="text-xl font-semibold mt-6 mb-2 text-cyan-400">🔍 Strategic Diagnosis</h4>
+          <p class="mb-4">Burnout isn’t caused by workload—it’s caused by <strong>unresolved micro-stressors</strong> (notification overload, context switching, social isolation).</p>
+          <p class="mb-4"><em>Reality Anchor:</em> WHO (2024) confirms 68% of remote burnout stems from <strong>digital friction</strong>, not hours worked.</p>
+
+          <h4 class="text-xl font-semibold mt-6 mb-2 text-violet-400">🛠️ 30-Day Launch Plan</h4>
+
+          <p class="font-bold mt-4">Week 1: Foundation</p>
+          <ul class="list-disc pl-5 mb-3 text-gray-300">
+            <li><strong>Tech Stack:</strong> Next.js + Supabase</li>
+            <li><strong>Core Feature:</strong> “Focus Mode” that blocks non-urgent notifications</li>
+            <li><strong>Ethical Guardrail:</strong> No biometric tracking. Privacy-by-design</li>
+          </ul>
+
+          <p class="font-bold mt-4">Week 2: Behavioral Layer</p>
+          <ul class="list-disc pl-5 mb-3 text-gray-300">
+            <li><strong>Micro-Recovery Rituals:</strong> 90-second breathwork every 45 minutes</li>
+            <li><strong>Social Proof:</strong> Anonymous “Team Pulse” mood heatmap</li>
+          </ul>
+
+          <p class="font-bold mt-4">Week 3: Viral Loop</p>
+          <ul class="list-disc pl-5 mb-3 text-gray-300">
+            <li><strong>Hook:</strong> “Your calendar is lying to you.”</li>
+            <li><strong>Sharing:</strong> Export “Focus Score” as LinkedIn badge</li>
+          </ul>
+
+          <p class="font-bold mt-4">Week 4: Monetization</p>
+          <ul class="list-disc pl-5 mb-3 text-gray-300">
+            <li><strong>Freemium:</strong> Free for individuals; $8/user/mo for teams</li>
+            <li><strong>ROI Pitch:</strong> Reduce turnover risk by 22% (Gallup 2024)</li>
+          </ul>
+
+          <h4 class="text-xl font-semibold mt-6 mb-2 text-pink-400">🌍 Cultural Adaptation</h4>
+          <ul class="list-disc pl-5 mb-3 text-gray-300">
+            <li><strong>U.S.:</strong> “Productivity hack”</li>
+            <li><strong>EU:</strong> “Right to disconnect” compliance</li>
+            <li><strong>Asia:</strong> “Team harmony” metrics</li>
+          </ul>
+
+          <h4 class="text-xl font-semibold mt-6 mb-2 text-cyan-400">📈 Predicted Outcomes</h4>
+          <ul class="list-disc pl-5 mb-3 text-gray-300">
+            <li><strong>Retention:</strong> 41% Day-30</li>
+            <li><strong>Virality:</strong> 1.8 shares/user</li>
+            <li><strong>Risk Flag:</strong> Avoid gamification</li>
+          </ul>
+
+          <blockquote class="mt-6 border-l-4 border-violet-500 pl-4 italic text-gray-300">
+            “You didn’t build another meditation app. You built a <strong>digital nervous system</strong> that <em>prevents</em> burnout before it starts.”
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center text-gray-500 text-sm">
+    © 2025 Empire Core Quantum OS. All outputs are licensed. Engine remains proprietary.
+  </footer>
+
+  <script>
+    document.getElementById('run-demo').addEventListener('click', () => {
+      document.getElementById('demo-output').classList.remove('hidden');
+      document.getElementById('run-demo').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
