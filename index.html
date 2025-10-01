@@ -188,8 +188,60 @@
       text-decoration: none;
     }
 
-    /* Hidden until loaded */
-    #main-content { display: none; }
+    /* SERVICE CARDS */
+    .service-diagnostic h3 { color: var(--cyan); }
+    .service-implementation h3 { color: var(--violet); }
+    .service-licensing h3 { color: var(--pink); }
+
+    .service-diagnostic .btn-primary { background: var(--cyan); }
+    .service-diagnostic .btn-primary:hover { box-shadow: 0 0 25px rgba(34, 211, 238, 0.7); }
+
+    .service-implementation .btn-primary { background: var(--violet); }
+    .service-implementation .btn-primary:hover { box-shadow: 0 0 25px rgba(139, 92, 246, 0.7); }
+
+    .service-licensing .btn-outline { border-color: var(--pink); color: var(--pink); }
+    .service-licensing .btn-outline:hover { background: rgba(236, 72, 153, 0.1); }
+
+    /* FEATURES */
+    .features {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+    .feature-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .feature h3 {
+      color: var(--glow);
+      margin-bottom: 0.5rem;
+    }
+    .cta-button {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 2px solid var(--glow);
+      color: var(--glow);
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      background: rgba(0, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* THINKING LOADER */
     #thinking-loader {
       position: fixed;
       top: 0;
@@ -224,6 +276,7 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
+    #main-content { display: none; }
   </style>
 </head>
 <body class="min-h-screen">
@@ -233,7 +286,7 @@
     <div id="thinking-text">AI Delivers Noise.<br>We Deliver <span id="typing-output"></span><span class="thinking-cursor"></span></div>
   </div>
 
-  <!-- MAIN CONTENT (HIDDEN UNTIL READY) -->
+  <!-- MAIN CONTENT -->
   <div id="main-content">
     <!-- BANNER -->
     <div class="empirecore-banner">
@@ -245,13 +298,13 @@
     <!-- HERO -->
     <section class="py-20 px-4 text-center" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-bold mb-6">
-        AI Delivers Noise.<br> We Deliver <span class="gradient-text" id="hero-gradient">Strategic Certainty</span>.
+        AI Delivers Noise.<br> We Deliver <span class="gradient-text">Strategic Certainty</span>.
       </h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10" id="hero-subtext">
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
         Empire Core is the world’s first <strong>Narrow AI Operating System</strong> that fuses technical precision, cultural intelligence, and emotional resonance. We deliver <strong>reality-anchored strategic intelligence</strong> for founders and enterprises who refuse to settle for hallucinated fluff.
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center" id="hero-buttons">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="btn-primary">
           Activate Your Intelligence
         </a>
@@ -463,7 +516,7 @@
     const fullText = "Strategic Certainty";
     const typingElement = document.getElementById('typing-output');
     let i = 0;
-    const delay = 69; // ms per character (6.9s total vibe)
+    const delay = 69;
 
     function type() {
       if (i < fullText.length) {
@@ -471,16 +524,12 @@
         i++;
         setTimeout(type, delay);
       } else {
-        // Fade out loader over 0.8s
         setTimeout(() => {
           document.getElementById('thinking-loader').style.opacity = '0';
-          document.getElementById('thinking-loader').style.pointerEvents = 'none';
           setTimeout(() => {
             document.getElementById('thinking-loader').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
-            // Initialize AOS
             AOS.init({ duration: 800 });
-            // Fade in buttons
             document.querySelectorAll('.btn-primary, .btn-outline').forEach((btn, idx) => {
               setTimeout(() => {
                 btn.style.opacity = '1';
@@ -492,7 +541,6 @@
       }
     }
 
-    // Start typing on load
     window.addEventListener('load', () => {
       type();
     });
