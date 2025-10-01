@@ -47,6 +47,21 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
     .hidden { display: none; }
     #strategy-output {
@@ -67,6 +82,14 @@
     .comment { color: #60a5fa; }
     .keyword { color: #f472b6; }
     .function { color: #34d399; }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+    }
   </style>
 </head>
 <body class="min-h-screen py-12 px-4">
@@ -81,7 +104,7 @@
           “Build me the next Fortnite Battle Royale—but for Gen Z in 2025.”
         </p>
       </div>
-      <button id="run-demo-btn" class="btn-primary text-lg px-8 py-4">
+      <button id="run-demo-btn" class="btn-primary text-lg px-8 py-4 pulse">
         ▶️ Run Strategic Simulation
       </button>
     </div>
@@ -96,9 +119,6 @@
     </div>
 
     <div id="end-actions" class="hidden text-center mt-8">
-      <div class="mb-6">
-        <audio id="trademark-sound" src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" preload="auto"></audio>
-      </div>
       <a href="mailto:Jo3d9n@gmail.com?subject=Schedule Strategy Session" class="btn-primary inline-block mb-4 px-6 py-3">
         📅 Schedule a Strategy Session
       </a>
@@ -158,6 +178,7 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
     this.teams = new Map();
     this.decayZone = { radius: 5000, shrinkRate: 0.5 };
     this.resonancePoints = 0;
+    this.worldUpgrades = { library: false, park: false };
   }
 
   <span class="keyword">async</span> <span class="function">joinMatch</span>(playerId) {
@@ -183,6 +204,10 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
     if (this.resonancePoints >= 1000 && !this.worldUpgrades.library) {
       this.worldUpgrades.library = true;
       this.broadcastGlobalEvent("📚 The Library is restored! Safe zone unlocked.");
+    }
+    if (this.resonancePoints >= 2500 && !this.worldUpgrades.park) {
+      this.worldUpgrades.park = true;
+      this.broadcastGlobalEvent("🌳 The Park is revived! Healing zone activated.");
     }
   }
 
@@ -210,11 +235,22 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
 }`;
 
     let currentIndex = 0;
-    const delay = 30; // ms per character
+    const delay = 25; // ms per character
 
     document.getElementById('run-demo-btn').addEventListener('click', () => {
       document.getElementById('start-screen').classList.add('hidden');
       document.getElementById('output-container').classList.remove('hidden');
+      
+      // Fade in buttons after 2s
+      setTimeout(() => {
+        document.querySelectorAll('.btn-primary, .btn-outline').forEach((btn, i) => {
+          setTimeout(() => {
+            btn.style.opacity = '1';
+            btn.style.transform = 'translateY(0)';
+          }, i * 300);
+        });
+      }, 2000);
+
       typeStrategy();
     });
 
@@ -229,11 +265,13 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
         setTimeout(() => {
           document.getElementById('code-output').classList.remove('hidden');
           document.getElementById('final-code').innerHTML = codeSnippet;
-          // Play trademark sound
-          document.getElementById('trademark-sound').play().catch(e => console.log("Sound play blocked"));
-          // Show end actions
+          // Show end actions after 0.8s
           setTimeout(() => {
             document.getElementById('end-actions').classList.remove('hidden');
+            document.querySelectorAll('#end-actions .btn-primary').forEach(btn => {
+              btn.style.opacity = '1';
+              btn.style.transform = 'translateY(0)';
+            });
           }, 800);
         }, 1000);
       }
