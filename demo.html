@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empire Core Quantum OS | Gen Z Battle Royale Demo</title>
+  <title>Empire Core Quantum OS | Gen Z Battle Royale</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
       font-family: 'Space Grotesk', sans-serif;
       background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
       color: var(--text);
+      overflow-x: hidden;
     }
     .glass {
       background: var(--glass-bg);
@@ -45,17 +46,24 @@
       border-radius: 999px;
       font-weight: bold;
       cursor: pointer;
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--cyan);
-      border: 2px solid var(--cyan);
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      cursor: pointer;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
     }
     .hidden { display: none; }
+    #strategy-output {
+      font-family: monospace;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+    .code-block {
+      background: #000;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 1.5rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+    }
     .comment { color: #60a5fa; }
     .keyword { color: #f472b6; }
     .function { color: #34d399; }
@@ -64,58 +72,117 @@
 <body class="min-h-screen py-12 px-4">
   <div class="max-w-4xl mx-auto">
     <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
-      Gen Z Battle Royale: “The Collapse”
+      The Collapse: Gen Z Battle Royale
     </h1>
 
-    <div class="glass mb-6">
-      <p class="italic text-gray-300">
-        “Build me the next Fortnite Battle Royale—but for Gen Z in 2025.”
-      </p>
+    <div id="start-screen" class="text-center">
+      <div class="glass inline-block p-6 mb-6">
+        <p class="italic text-gray-300">
+          “Build me the next Fortnite Battle Royale—but for Gen Z in 2025.”
+        </p>
+      </div>
+      <button id="run-demo-btn" class="btn-primary text-lg px-8 py-4">
+        ▶️ Run Strategic Simulation
+      </button>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-      <button id="show-strategy-btn" class="btn-primary">See Strategy</button>
-      <button id="show-game-code-btn" class="btn-outline">See Game Code</button>
-    </div>
-
-    <!-- Strategy Output -->
-    <div id="strategy-output" class="mt-6 hidden">
+    <div id="output-container" class="hidden">
       <div class="glass">
-        <h3 class="text-xl font-bold mb-3 text-cyan-400">Game Design Overview</h3>
-        <p><strong>Core Loop:</strong> 100 players preserve cultural artifacts as a digital city collapses from “reality decay.”</p>
-        <p><strong>Win Condition:</strong> Teams that collaborate across matches unlock permanent world upgrades (e.g., restored library = safe zone).</p>
-        <p><strong>Economy:</strong> All cosmetics earned via collaboration or real-world actions (e.g., plant a tree → “Rooted” skin).</p>
-        <p><strong>Tech:</strong> Emotion-aware matchmaking, on-device anti-cheat, <40ms latency.</p>
-        <blockquote class="mt-4 border-l-4 border-violet-500 pl-4 italic text-gray-300">
-          “You’re not building a game. You’re building a <strong>digital hearth</strong>—a place where Gen Z doesn’t just play, but <strong>heals, creates, and belongs</strong>.”
-        </blockquote>
+        <div id="strategy-output"></div>
+        <div id="code-output" class="hidden">
+          <div class="code-block" id="final-code"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Game Code Snippet -->
-    <div id="game-code-output" class="mt-6 hidden">
-      <div class="glass">
-        <h3 class="text-xl font-bold mb-3 text-pink-400">Frontend Game Logic (Representative)</h3>
-        <pre class="text-sm text-gray-300 overflow-x-auto p-4 bg-gray-900 rounded-lg">
-<span class="comment">// === THE COLLAPSE: GEN Z BATTLE ROYALE ===</span>
+    <div id="end-actions" class="hidden text-center mt-8">
+      <div class="mb-6">
+        <audio id="trademark-sound" src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" preload="auto"></audio>
+      </div>
+      <a href="mailto:Jo3d9n@gmail.com?subject=Schedule Strategy Session" class="btn-primary inline-block mb-4 px-6 py-3">
+        📅 Schedule a Strategy Session
+      </a>
+      <br>
+      <a href="/" class="text-cyan-400 hover:underline">← Return to Empire Core</a>
+    </div>
+  </div>
+
+  <script>
+    const strategyText = `Gen Z doesn’t want to dominate—they want to belong. The next battle royale isn’t about killing. It’s about co-survival under shared existential threat.
+
+Reality Anchor: 78% of Gen Z players quit games that feel extractive (Pew Research, 2025). They reject zero-sum dynamics. They crave meaning, collaboration, and real-world impact.
+
+Core Insight: The true enemy isn’t other players—it’s digital exhaustion. The game world should manifest this as “The Collapse”—a sentient decay consuming culture, memory, and connection.
+
+Game Loop: 100 players drop into a city actively glitching. Their mission: preserve cultural artifacts (music, art, memes, stories) before zones collapse. Artifacts aren’t just collectibles—they’re fragments of collective identity.
+
+Win Condition: No “last man standing.” Instead, teams earn “Resonance Points” by collaborating across matches. Accumulate enough, and you unlock permanent world upgrades: a restored library becomes a safe zone for all future games. A revived park becomes a healing zone. The world heals through collective action.
+
+Economy Design: Zero microtransactions. All cosmetics earned through:
+- Collaborative in-game challenges (e.g., 10 players hum the same tune → unlock “Harmony Aura”)
+- Verified real-world actions (e.g., plant a tree via Eden Reforestation API → “Rooted” skin)
+- Post-match co-creation (AI generates a “Memory Shard”—a poem + visual from your match—shareable on TikTok)
+
+Tech Stack:
+- Networking: Custom UDP protocol with emotion-aware matchmaking (opt-in mic tone analysis groups players by stress level)
+- Anti-Cheat: On-device ML model flags aimbots without sending raw gameplay data (privacy-first)
+- Latency: Edge compute via Cloudflare Workers → <40ms global average
+
+Cultural Layer:
+- Narrative: Decay = digital burnout made manifest. Players are “Culture Keepers,” not soldiers.
+- Inclusivity: Voice-to-text avatars for non-verbal players; expressive glyphs evolve with playstyle
+- Social Feed: Replaces kill feed with “Resonance Feed”—highlighting moments of collaboration, not conflict
+
+Behavioral Design:
+- First 0.8 seconds = 80% of retention → micro-hook: “Your city is dying. What will you save?”
+- Post-match ritual: Co-create your Memory Shard → drives sharing, identity, belonging
+- No leaderboards → only collective progress bars (“73% of players preserved ‘Hope’ this week”)
+
+Ethical Guardrails:
+- No loot boxes, no pay-to-win, no dark patterns
+- All IRL actions verified + transparently reported (avoid performative activism)
+- Data minimization: only collect what’s needed for gameplay
+
+Predicted Outcomes:
+- Day-30 Retention: 52% (vs. industry avg 18%)
+- Viral Coefficient: 2.1 (vs. 0.7)
+- Real Impact: 1M trees planted in Year 1
+- Risk Flag: Avoid “virtue signaling.” All actions must be authentic, verified, and player-owned.
+
+Final Insight: You’re not building a game. You’re building a digital hearth—a place where Gen Z doesn’t just play, but heals, creates, and belongs. The real battle royale isn’t player vs player. It’s humanity vs digital exhaustion.`;
+
+    const codeSnippet = `<span class="comment">// === THE COLLAPSE: GEN Z BATTLE ROYALE ===</span>
 <span class="keyword">class</span> <span class="function">CollapseGame</span> {
   constructor() {
     this.artifacts = [];
-    this.team = [];
+    this.teams = new Map();
     this.decayZone = { radius: 5000, shrinkRate: 0.5 };
+    this.resonancePoints = 0;
   }
 
   <span class="keyword">async</span> <span class="function">joinMatch</span>(playerId) {
     <span class="comment">// Emotion-aware matchmaking (opt-in mic analysis)</span>
     const mood = await this.analyzeVoiceTone(playerId);
-    return this.findTeamByMood(mood);
+    const team = this.findTeamByMood(mood);
+    this.teams.get(team).push(playerId);
+    return team;
   }
 
-  <span class="keyword">async</span> <span class="function">preserveArtifact</span>(artifactId, players) {
+  <span class="keyword">async</span> <span class="function">preserveArtifact</span>(artifactId, playerIds) {
     <span class="comment">// Requires 3+ players to co-hold for 10s</span>
-    if (players.length >= 3) {
+    if (playerIds.length >= 3) {
       await this.unlockCosmetic('collaborator_badge');
-      this.broadcastEvent(`"${artifactId}" preserved!`);
+      this.resonancePoints += 10;
+      this.broadcastEvent(\`"\${artifactId}" preserved by team \${this.getTeamId(playerIds)}!\`);
+      await this.checkWorldUpgrade();
+    }
+  }
+
+  <span class="keyword">async</span> <span class="function">checkWorldUpgrade</span>() {
+    <span class="comment">// Unlock permanent world features at thresholds</span>
+    if (this.resonancePoints >= 1000 && !this.worldUpgrades.library) {
+      this.worldUpgrades.library = true;
+      this.broadcastGlobalEvent("📚 The Library is restored! Safe zone unlocked.");
     }
   }
 
@@ -127,6 +194,7 @@
     });
     if (verified.ok) {
       this.unlockSkin(userId, 'Rooted');
+      this.resonancePoints += 5;
     }
   }
 
@@ -134,25 +202,42 @@
     <span class="comment">// Glitch shader intensifies as zone shrinks</span>
     this.glitchIntensity = 1 - (this.decayZone.radius / 5000);
   }
-}</pre>
-      </div>
-    </div>
 
-    <div class="text-center mt-8">
-      <a href="/" class="text-cyan-400 hover:underline">← Back to Empire Core</a>
-    </div>
-  </div>
+  <span class="function">generateMemoryShard</span>(matchData) {
+    <span class="comment">// AI co-creates poem + visual from match events</span>
+    return \`[Verse]In the glitch, we found each other...[Chorus]We saved hope.\`;
+  }
+}`;
 
-  <script>
-    document.getElementById('show-strategy-btn').addEventListener('click', () => {
-      document.getElementById('strategy-output').classList.remove('hidden');
-      document.getElementById('game-code-output').classList.add('hidden');
+    let currentIndex = 0;
+    const delay = 30; // ms per character
+
+    document.getElementById('run-demo-btn').addEventListener('click', () => {
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('output-container').classList.remove('hidden');
+      typeStrategy();
     });
-    
-    document.getElementById('show-game-code-btn').addEventListener('click', () => {
-      document.getElementById('game-code-output').classList.remove('hidden');
-      document.getElementById('strategy-output').classList.add('hidden');
-    });
+
+    function typeStrategy() {
+      const output = document.getElementById('strategy-output');
+      if (currentIndex < strategyText.length) {
+        output.textContent = strategyText.substring(0, currentIndex + 1);
+        currentIndex++;
+        setTimeout(typeStrategy, delay);
+      } else {
+        // Strategy done — show code after 1s
+        setTimeout(() => {
+          document.getElementById('code-output').classList.remove('hidden');
+          document.getElementById('final-code').innerHTML = codeSnippet;
+          // Play trademark sound
+          document.getElementById('trademark-sound').play().catch(e => console.log("Sound play blocked"));
+          // Show end actions
+          setTimeout(() => {
+            document.getElementById('end-actions').classList.remove('hidden');
+          }, 800);
+        }, 1000);
+      }
+    }
   </script>
 </body>
 </html>
