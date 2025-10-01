@@ -51,7 +51,6 @@
 
   <!-- Custom Styles -->
   <style>
-    /* === BRAND-COHERENT COLOR SYSTEM === */
     :root {
       --violet: #8b5cf6;
       --pink: #ec4899;
@@ -67,7 +66,7 @@
       --card-glow-hover: rgba(139, 92, 246, 0.8);
     }
 
-    /* Empire Core Banner */
+    /* Banner */
     .empirecore-banner {
       background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
       border-bottom: 1px solid rgba(139, 92, 246, 0.3);
@@ -114,7 +113,6 @@
       box-shadow: 0 0 25px var(--card-glow);
       transition: all 0.3s ease;
     }
-
     .glow:hover {
       box-shadow: 0 0 35px var(--card-glow-hover);
       transform: translateY(-5px);
@@ -138,13 +136,12 @@
       background: rgba(139, 92, 246, 0.1);
       transition: all 0.3s ease;
     }
-
     .social-icon:hover {
       background: rgba(139, 92, 246, 0.3);
       transform: translateY(-3px);
     }
 
-    /* BUTTONS */
+    /* Buttons */
     .btn-primary {
       background: linear-gradient(90deg, var(--violet), var(--pink));
       color: white;
@@ -188,21 +185,18 @@
       text-decoration: none;
     }
 
-    /* SERVICE CARDS */
+    /* Service Cards */
     .service-diagnostic h3 { color: var(--cyan); }
     .service-implementation h3 { color: var(--violet); }
     .service-licensing h3 { color: var(--pink); }
-
     .service-diagnostic .btn-primary { background: var(--cyan); }
     .service-diagnostic .btn-primary:hover { box-shadow: 0 0 25px rgba(34, 211, 238, 0.7); }
-
     .service-implementation .btn-primary { background: var(--violet); }
     .service-implementation .btn-primary:hover { box-shadow: 0 0 25px rgba(139, 92, 246, 0.7); }
-
     .service-licensing .btn-outline { border-color: var(--pink); color: var(--pink); }
     .service-licensing .btn-outline:hover { background: rgba(236, 72, 153, 0.1); }
 
-    /* FEATURES */
+    /* Features */
     .features {
       padding: 3rem 1rem;
       max-width: 800px;
@@ -241,7 +235,7 @@
       transform: translateY(-2px);
     }
 
-    /* THINKING LOADER */
+    /* Thinking Loader */
     #thinking-loader {
       position: fixed;
       top: 0;
@@ -277,6 +271,15 @@
       50% { opacity: 0; }
     }
     #main-content { display: none; }
+
+    /* Demo Output */
+    #demo-output {
+      margin-top: 1.5rem;
+    }
+    #demo-output h3,
+    #demo-output h4 {
+      margin-top: 1.2rem;
+    }
   </style>
 </head>
 <body class="min-h-screen">
@@ -512,7 +515,7 @@
   </div>
 
   <script>
-    // === AI THINKING SIMULATION ===
+    // === PAGE LOAD: AI THINKING SIMULATION ===
     const fullText = "Strategic Certainty";
     const typingElement = document.getElementById('typing-output');
     let i = 0;
@@ -545,10 +548,66 @@
       type();
     });
 
-    // Demo button logic
-    document.getElementById('run-demo')?.addEventListener('click', () => {
-      document.getElementById('demo-output').classList.remove('hidden');
-      document.getElementById('run-demo').classList.add('hidden');
+    // === DEMO BUTTON: SLOW TYPING OUTPUT ===
+    document.getElementById('run-demo').addEventListener('click', () => {
+      const demoOutput = document.getElementById('demo-output');
+      const runBtn = document.getElementById('run-demo');
+      
+      runBtn.classList.add('hidden');
+      demoOutput.classList.remove('hidden');
+
+      const dossier = `
+Empire Core Quantum OS — Sample Intelligence Dossier
+
+🔍 Strategic Diagnosis
+Burnout isn’t caused by workload—it’s caused by unresolved micro-stressors (notification overload, context switching, social isolation).
+Reality Anchor: WHO (2024) confirms 68% of remote burnout stems from digital friction, not hours worked.
+
+🛠️ 30-Day Launch Plan
+
+Week 1: Foundation
+- Tech Stack: Next.js + Supabase (zero-config auth, real-time DB)
+- Core Feature: “Focus Mode” that blocks non-urgent notifications during deep work (validated by UC Irvine study)
+- Ethical Guardrail: No biometric tracking. Privacy-by-design (GDPR/CCPA compliant)
+
+Week 2: Behavioral Layer
+- Micro-Recovery Rituals: 90-second guided breathwork after every 45 minutes (ultradian rhythm research)
+- Social Proof: “Team Pulse” — anonymous mood heatmap (opt-in) to reduce isolation
+
+Week 3: Viral Loop
+- Hook: “Your calendar is lying to you. Here’s what your energy actually looks like.”
+- Sharing: Export “Focus Score” as LinkedIn badge → drives organic B2B leads
+
+Week 4: Monetization
+- Freemium: Free for individuals; $8/user/mo for teams
+- ROI Pitch: “Reduce turnover risk by 22% (Gallup 2024) with $0 infra cost.”
+
+🌍 Cultural Adaptation Notes
+- U.S.: Frame as “productivity hack”
+- EU: Emphasize “right to disconnect” compliance
+- Asia: Add “team harmony” metrics (avoid individual blame)
+
+📈 Predicted Outcomes
+- User Retention: 41% Day-30 (vs. 12% industry avg)
+- Virality: 1.8 organic shares/user
+- Risk Flag: Avoid gamification — burnout sufferers reject “scored wellness”
+
+“You didn’t build another meditation app. You built a digital nervous system that prevents burnout before it starts—by redesigning the interface between human attention and digital noise.”
+      `.trim();
+
+      let idx = 0;
+      const outputDiv = demoOutput.querySelector('.glass');
+      outputDiv.innerHTML = '';
+
+      function typeDossier() {
+        if (idx < dossier.length) {
+          outputDiv.textContent = dossier.substring(0, idx + 1);
+          idx++;
+          setTimeout(typeDossier, 28); // ~30s total
+        }
+      }
+
+      typeDossier();
     });
   </script>
 </body>
