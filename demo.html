@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,18 +48,6 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--cyan);
-      border: 2px solid var(--cyan);
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      cursor: pointer;
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.3s ease, transform 0.3s ease;
@@ -235,22 +224,11 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
 }`;
 
     let currentIndex = 0;
-    const delay = 25; // ms per character
+    const delay = 25;
 
     document.getElementById('run-demo-btn').addEventListener('click', () => {
       document.getElementById('start-screen').classList.add('hidden');
       document.getElementById('output-container').classList.remove('hidden');
-      
-      // Fade in buttons after 2s
-      setTimeout(() => {
-        document.querySelectorAll('.btn-primary, .btn-outline').forEach((btn, i) => {
-          setTimeout(() => {
-            btn.style.opacity = '1';
-            btn.style.transform = 'translateY(0)';
-          }, i * 300);
-        });
-      }, 2000);
-
       typeStrategy();
     });
 
@@ -261,17 +239,13 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
         currentIndex++;
         setTimeout(typeStrategy, delay);
       } else {
-        // Strategy done — show code after 1s
         setTimeout(() => {
           document.getElementById('code-output').classList.remove('hidden');
           document.getElementById('final-code').innerHTML = codeSnippet;
-          // Show end actions after 0.8s
           setTimeout(() => {
             document.getElementById('end-actions').classList.remove('hidden');
-            document.querySelectorAll('#end-actions .btn-primary').forEach(btn => {
-              btn.style.opacity = '1';
-              btn.style.transform = 'translateY(0)';
-            });
+            document.querySelector('#end-actions .btn-primary').style.opacity = '1';
+            document.querySelector('#end-actions .btn-primary').style.transform = 'translateY(0)';
           }, 800);
         }, 1000);
       }
@@ -279,3 +253,5 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
   </script>
 </body>
 </html>
+```
+
