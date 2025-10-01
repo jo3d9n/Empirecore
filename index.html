@@ -1,293 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empire Core System | AI Operating System for Unsolvable Problems</title>
+<head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empire Core | AI Operating System for Strategic Certainty</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
-  <!-- For modern browsers -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#000010">
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="The world's first AI Synthesis Engine. We fuse cross-domain intelligence to help you build any project 5-10x faster, delivering strategic certainty from start to finish.">
+    <meta name="keywords" content="AI strategy, AI project management, strategic intelligence, ANI-TOE engine, business acceleration, AI consulting">
 
-  <!-- SEO -->
-  <meta name="description" content="The world’s first emotionally intelligent, reality-anchored Narrow AI Operating System. We deliver strategic certainty for founders, agencies, and enterprises.">
-  <meta name="keywords" content="AI consulting, forensic tech audit, Narrow AI OS, Wyoming AI company, human-AI duo, strategic intelligence">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Empire Core | AI Operating System for Strategic Certainty">
+    <meta property="og:description" content="Build any project 5-10x faster with our AI Synthesis Engine. We deliver reality-anchored strategy, not noise.">
+    <meta property="og:url" content="https://empirecore.xyz ">
+    <meta property="og:image" content="https://empirecore.xyz/og-image.jpg ">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
-  <!-- OG Tags -->
-  <meta property="og:title" content="Empire Core System | AI OS for Unsolvable Problems">
-  <meta property="og:description" content="The world’s first emotionally intelligent, reality-anchored Narrow AI Operating System.">
-  <meta property="og:url" content="https://empirecore.xyz">
-  <meta property="og:image" content="https://empirecore.xyz/og-image.jpg">
-  <meta property="og:type" content="website">
+    <!-- CSS & Fonts -->
+    <script src="https://cdn.tailwindcss.com "></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com ">
+    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- JS Libraries -->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js "></script>
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Empire Core",
-    "url": "https://empirecore.xyz",
-    "logo": "https://empirecore.xyz/favicon.png",
-    "sameAs": [
-      "https://linkedin.com/company/empire-core",
-      "https://x.com/empirecore"
-    ],
-    "description": "The first sovereign intelligence engine that fuses quantum physics, behavioral economics, and cultural archetypes to solve unsolvable problems."
-  }
-  </script>
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --violet: #8b5cf6;
+            --pink: #ec4899;
+            --cyan: #22d3ee;
+            --glow: #0ff;
+            --bg-start: #0a0914;
+            --bg-end: #110e23;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(17, 14, 35, 0.5);
+            --glass-border: rgba(139, 92, 246, 0.15);
+            --card-glow: rgba(139, 92, 246, 0.3);
+        }
 
-  <!-- CSS Libraries -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg-start);
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-  <!-- Custom Styles -->
-  <style>
-    :root {
-      --violet: #8b5cf6;
-      --pink: #ec4899;
-      --cyan: #22d3ee;
-      --glow: #0ff;
-      --bg-start: #0c0a1a;
-      --bg-end: #1a1633;
-      --text: #e2e8f0;
-      --text-muted: #cbd5e1;
-      --glass-bg: rgba(25, 22, 45, 0.65);
-      --glass-border: rgba(139, 92, 246, 0.2);
-      --card-glow: rgba(139, 92, 246, 0.5);
-      --card-glow-hover: rgba(139, 92, 246, 0.8);
-    }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
 
-    /* Banner */
-    .empirecore-banner {
-      background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
-      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
-      padding: 0.6rem 0;
-      text-align: center;
-      font-size: 0.92rem;
-      font-family: 'Space Grotesk', sans-serif;
-      position: relative;
-      z-index: 50;
-      animation: bannerGlow 8s ease-in-out infinite alternate;
-    }
-    @keyframes bannerGlow {
-      0% { box-shadow: inset 0 0 0 0 rgba(139, 92, 246, 0.1); }
-      100% { box-shadow: inset 0 0 12px 0 rgba(34, 211, 238, 0.15); }
-    }
-    .banner-text {
-      color: var(--text);
-      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 600;
-    }
-    .banner-text strong {
-      font-weight: 700;
-    }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-      color: var(--text);
-      overflow-x: hidden;
-    }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-    .glass {
-      background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      transition: all 0.3s ease;
-    }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--violet), var(--pink));
+            color: white;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 35px rgba(139, 92, 246, 0.8);
+        }
 
-    .glow {
-      box-shadow: 0 0 25px var(--card-glow);
-      transition: all 0.3s ease;
-    }
-    .glow:hover {
-      box-shadow: 0 0 35px var(--card-glow-hover);
-      transform: translateY(-5px);
-    }
+        .btn-outline {
+            background: transparent;
+            color: var(--cyan);
+            border: 2px solid var(--cyan);
+        }
+        .btn-outline:hover {
+            background: rgba(34, 211, 238, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+        }
+        .btn-outline.active {
+            background: var(--cyan);
+            color: var(--bg-start);
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+        }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-start);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.8s ease;
+        }
+        #preloader-text {
+            font-size: 1.2rem; color: var(--text);
+        }
+        .cursor {
+            display: inline-block; width: 10px; height: 1.2em;
+            background: var(--glow); margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
 
-    blockquote {
-      border-left: 3px solid var(--violet);
-      padding-left: 1rem;
-      margin: 1.5rem 0;
-      color: var(--text-muted);
-      font-style: italic;
-    }
+        /* Main Content hidden until load */
+        #main-content { display: none; }
 
-    .social-icon {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(139, 92, 246, 0.1);
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      background: rgba(139, 92, 246, 0.3);
-      transform: translateY(-3px);
-    }
+        /* Reveal Section */
+        #constellation-canvas-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        #constellation-canvas {
+            width: 100%;
+            height: 100%;
+        }
 
-    /* Buttons */
-    .btn-primary {
-      background: linear-gradient(90deg, var(--violet), var(--pink));
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      font-size: 1.125rem;
-      transition: all 0.3s ease;
-      display: inline-block;
-      text-decoration: none;
-      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
-      color: white;
-      text-decoration: none;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--cyan);
-      border: 2px solid var(--cyan);
-      padding: 0.8rem 1.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      font-size: 1.125rem;
-      transition: all 0.3s ease;
-      display: inline-block;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    .btn-outline:hover {
-      background: rgba(34, 211, 238, 0.1);
-      transform: translateY(-2px);
-      color: var(--cyan);
-      text-decoration: none;
-    }
-
-    /* Service Cards */
-    .service-diagnostic h3 { color: var(--cyan); }
-    .service-implementation h3 { color: var(--violet); }
-    .service-licensing h3 { color: var(--pink); }
-    .service-diagnostic .btn-primary { background: var(--cyan); }
-    .service-diagnostic .btn-primary:hover { box-shadow: 0 0 25px rgba(34, 211, 238, 0.7); }
-    .service-implementation .btn-primary { background: var(--violet); }
-    .service-implementation .btn-primary:hover { box-shadow: 0 0 25px rgba(139, 92, 246, 0.7); }
-    .service-licensing .btn-outline { border-color: var(--pink); color: var(--pink); }
-    .service-licensing .btn-outline:hover { background: rgba(236, 72, 153, 0.1); }
-
-    /* Features */
-    .features {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .features h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: var(--text);
-    }
-    .feature-grid {
-      display: grid;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .feature h3 {
-      color: var(--glow);
-      margin-bottom: 0.5rem;
-    }
-    .cta-button {
-      display: block;
-      width: max-content;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 2px solid var(--glow);
-      color: var(--glow);
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .cta-button:hover {
-      background: rgba(0, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Thinking Loader */
-    #thinking-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      text-align: center;
-      padding: 2rem;
-    }
-    #thinking-text {
-      font-family: 'Space Grotesk', monospace;
-      font-size: 1.2rem;
-      color: var(--text);
-      max-width: 600px;
-      line-height: 1.6;
-    }
-    .thinking-cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1.2em;
-      background: var(--glow);
-      margin-left: 4px;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    #main-content { display: none; }
-
-    /* Demo Output */
-    #demo-output {
-      margin-top: 1.5rem;
-    }
-    #demo-output h3,
-    #demo-output h4 {
-      margin-top: 1.2rem;
-    }
-  </style>
+        .dossier-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .dossier-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="min-h-screen">
+<body class="antialiased">
 
-  <!-- THINKING LOADER -->
-  <div id="thinking-loader">
-    <div id="thinking-text">AI Delivers Noise.<br>We Deliver <span id="typing-output"></span><span class="thinking-cursor"></span></div>
-  </div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="flex items-center">
+            <svg class="w-10 h-10 mr-4 animate-spin text-violet-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <div id="preloader-text">Synthesizing Reality<span class="cursor"></span></div>
+        </div>
+    </div>
 
   <!-- MAIN CONTENT -->
   <div id="main-content">
