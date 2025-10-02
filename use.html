@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Use Cases — Empire Core</title>
+  <meta name="description" content="Build sovereign AI systems in hours, not years. From viral media engines to national energy grids." />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    :root {
+      --ec-blue: #0a0a2a;
+      --ec-cyan: #00f0ff;
+      --ec-purple: #8a2be2;
+      --ec-white: #ffffff;
+      --ec-gray: #a0a0c0;
+    }
+    body {
+      background: var(--ec-blue);
+      color: var(--ec-white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--ec-cyan);
+    }
+    nav a {
+      color: var(--ec-gray);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .hero {
+      text-align: center;
+      margin: 4rem 0;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--ec-cyan), var(--ec-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--ec-gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    .card {
+      background: rgba(20, 20, 50, 0.6);
+      border: 1px solid rgba(0, 240, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .card:hover {
+      border-color: var(--ec-cyan);
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      color: var(--ec-cyan);
+      margin-top: 0;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(138, 43, 226, 0.2);
+      color: var(--ec-purple);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      color: var(--ec-gray);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">EMPIRE CORE</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/docs">Docs</a>
+        <a href="/use.html" style="color: var(--ec-cyan);">Use Cases</a>
+        <a href="/deploy">Deploy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Build Sovereign Systems in Hours</h1>
+      <p>From solo creators to governments—Empire Core lets you deploy AI-native products, platforms, and policies with one command.</p>
+    </section>
+
+    <section class="grid">
+      <!-- Media & Growth -->
+      <div class="card">
+        <h3>AI Growth Engine</h3>
+        <p>Autonomous TikTok-to-email funnel that scans trends, creates content, and converts viewers into paying customers.</p>
+        <div>
+          <span class="tag">Viral</span>
+          <span class="tag">Zero-Code</span>
+          <span class="tag">24h Launch</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI Creative Studio</h3>
+        <p>Generate full ad campaigns, sitcom scripts, or songs in your brand voice—ready for Sora, ElevenLabs, or TikTok.</p>
+        <div>
+          <span class="tag">Media</span>
+          <span class="tag">NATI ≥ 1.6</span>
+          <span class="tag">Archetype-Driven</span>
+        </div>
+      </div>
+
+      <!-- Business & Product -->
+      <div class="card">
+        <h3>Autonomous Product Team</h3>
+        <p>From idea to MVP: AI product manager, engineer, and marketer build, test, and launch your SaaS in one week.</p>
+        <div>
+          <span class="tag">SaaS</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">Profit-First</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI Sales & Capital Engine</h3>
+        <p>Personalized outreach, funnel automation, and real-time ad spend optimization that scales to $1M/mo.</p>
+        <div>
+          <span class="tag">B2B</span>
+          <span class="tag">ROI-Driven</span>
+          <span class="tag">Auto-Pivot</span>
+        </div>
+      </div>
+
+      <!-- Policy & Infrastructure -->
+      <div class="card">
+        <h3>National Energy Grid</h3>
+        <p>Deploy SMR microgrids + graphene-Si control chips + Al-S batteries—optimized for your country’s culture and resources.</p>
+        <div>
+          <span class="tag">Sovereign</span>
+          <span class="tag">20% Efficiency Gain</span>
+          <span class="tag">Reality-Anchored</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI Policy Synthesizer</h3>
+        <p>Turn global challenges (climate, AI, pandemics) into culturally resonant, ethically-scored policy briefs—in 90 days.</p>
+        <div>
+          <span class="tag">UN-Ready</span>
+          <span class="tag">CDI ≥ 0.85</span>
+          <span class="tag">Adoption in 1 Quarter</span>
+        </div>
+      </div>
+
+      <!-- Defense & Security -->
+      <div class="card">
+        <h3>Epistemic Defense System</h3>
+        <p>Protect your nation’s information ecosystem from disinformation using AI truth-validation and narrative inoculation.</p>
+        <div>
+          <span class="tag">Sovereign</span>
+          <span class="tag">Real-Time</span>
+          <span class="tag">Constitutional</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI Cybersecurity Ops</h3>
+        <p>Autonomous threat modeling, red-teaming, and patch deployment—faster than human attackers can adapt.</p>
+        <div>
+          <span class="tag">Zero-Trust</span>
+          <span class="tag">Self-Healing</span>
+          <span class="tag">Ethical</span>
+        </div>
+      </div>
+
+      <!-- Personal & Creative -->
+      <div class="card">
+        <h3>Sovereign Personal OS</h3>
+        <p>Your AI concierge that manages memory, decisions, and creativity—100% private, 100% yours.</p>
+        <div>
+          <span class="tag">Personal</span>
+          <span class="tag">On-Device</span>
+          <span class="tag">Sovereign</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI Co-Creator Studio</h3>
+        <p>Write novels, compose symphonies, or design games with an AI that understands your soul—not just your prompts.</p>
+        <div>
+          <span class="tag">Creative</span>
+          <span class="tag">Archetypal</span>
+          <span class="tag">Resonant</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Empire Core — The first true AI central nervous system.<br>
+      Build. Deploy. Own. Scale.</p>
+      <p><a href="/deploy" style="color: var(--ec-cyan);">Deploy your sovereign system today →</a></p>
+    </footer>
+  </div>
+</body>
+</html>
