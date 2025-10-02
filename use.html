@@ -2,238 +2,396 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Use Cases — Empire Core</title>
-  <meta name="description" content="Build sovereign AI systems in hours, not years. From viral media engines to national energy grids." />
-  <link rel="stylesheet" href="/css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use Cases — Empire Core Quantum OS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Explore real-world applications of Empire Core’s AI Synthesis Engine—from sovereign personal OS to national energy grids.">
+  <meta name="keywords" content="AI use cases, strategic AI, ANI-TOE engine, sovereign systems, AI for founders">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Empire Core Use Cases | AI Operating System for Strategic Certainty">
+  <meta property="og:description" content="See how Empire Core builds reality-anchored, cross-domain systems in hours—not years.">
+  <meta property="og:url" content="https://empirecore.xyz/use.html">
+  <meta property="og:image" content="https://empirecore.xyz/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Styles -->
   <style>
     :root {
-      --ec-blue: #0a0a2a;
-      --ec-cyan: #00f0ff;
-      --ec-purple: #8a2be2;
-      --ec-white: #ffffff;
-      --ec-gray: #a0a0c0;
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --glow: #0ff;
+      --bg-start: #0a0914;
+      --bg-end: #110e23;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --glass-bg: rgba(17, 14, 35, 0.5);
+      --glass-border: rgba(139, 92, 246, 0.15);
+      --card-glow: rgba(139, 92, 246, 0.3);
     }
+
     body {
-      background: var(--ec-blue);
-      color: var(--ec-white);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+      overflow-x: hidden;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
+
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.5;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--ec-cyan);
-    }
-    nav a {
-      color: var(--ec-gray);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-size: 0.9rem;
-    }
-    .hero {
-      text-align: center;
-      margin: 4rem 0;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      background: linear-gradient(to right, var(--ec-cyan), var(--ec-purple));
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero p {
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      color: white;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--violet), var(--pink));
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 35px rgba(139, 92, 246, 0.8);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+    }
+    .btn-outline:hover {
+      background: rgba(34, 211, 238, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+      color: var(--cyan);
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-start);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.8s ease;
+    }
+    #preloader-text {
       font-size: 1.2rem;
-      color: var(--ec-gray);
-      max-width: 700px;
-      margin: 0 auto;
+      color: var(--text);
     }
-    .grid {
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: var(--glow);
+      margin-left: 5px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Main Content hidden until load */
+    #main-content { display: none; }
+
+    /* Banner */
+    .empirecore-banner {
+      background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.6rem 0;
+      text-align: center;
+      font-size: 0.92rem;
+      font-family: 'Space Grotesk', sans-serif;
+      position: relative;
+      z-index: 50;
+    }
+    .banner-text {
+      color: var(--text);
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .banner-text strong {
+      font-weight: 700;
+    }
+
+    /* Use Case Grid */
+    .use-case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      margin: 4rem 0;
+      margin-top: 3rem;
     }
-    .card {
-      background: rgba(20, 20, 50, 0.6);
-      border: 1px solid rgba(0, 240, 255, 0.1);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: transform 0.3s, border-color 0.3s;
+
+    .use-case-card {
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
     }
-    .card:hover {
-      border-color: var(--ec-cyan);
-      transform: translateY(-4px);
+    .use-case-card:hover {
+      border-color: var(--card-glow);
+      box-shadow: 0 0 25px var(--card-glow);
     }
-    .card h3 {
-      color: var(--ec-cyan);
-      margin-top: 0;
+    .use-case-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--cyan);
     }
     .tag {
       display: inline-block;
-      background: rgba(138, 43, 226, 0.2);
-      color: var(--ec-purple);
+      background: rgba(139, 92, 246, 0.2);
+      color: var(--violet);
       font-size: 0.75rem;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       margin-right: 0.5rem;
       margin-top: 0.5rem;
     }
-    footer {
-      text-align: center;
-      padding: 3rem 0 2rem;
-      color: var(--ec-gray);
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .grid { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="logo">EMPIRE CORE</div>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/use.html" style="color: var(--ec-cyan);">Use Cases</a>
-      </nav>
-    </header>
+<body class="antialiased">
 
-    <section class="hero">
-      <h1>Build Sovereign Systems in Hours</h1>
-      <p>From solo creators to governments—Empire Core lets you deploy AI-native products, platforms, and policies with one command.</p>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="flex items-center">
+      <svg class="w-10 h-10 mr-4 animate-spin text-violet-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <div id="preloader-text">Synthesizing Use Cases<span class="cursor"></span></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+    <!-- BANNER -->
+    <div class="empirecore-banner">
+      <span class="banner-text">
+        <strong>Empire Core Quantum OS</strong> — Where unsolvable problems meet sovereign intelligence.
+      </span>
+    </div>
+
+    <!-- HERO -->
+    <section class="py-20 px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Build Sovereign Systems<br>in <span class="gradient-text">Hours, Not Years</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+        From solo creators to nation-states—Empire Core lets you deploy AI-native products, platforms, and policies with one command.
+      </p>
+      <a href="/" class="btn-outline">← Back to Home</a>
     </section>
 
-    <section class="grid">
-      <!-- Media & Growth -->
-      <div class="card">
-        <h3>AI Growth Engine</h3>
-        <p>Autonomous TikTok-to-email funnel that scans trends, creates content, and converts viewers into paying customers.</p>
-        <div>
-          <span class="tag">Viral</span>
-          <span class="tag">Zero-Code</span>
-          <span class="tag">24h Launch</span>
-        </div>
-      </div>
+    <!-- USE CASES -->
+    <section class="py-12 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="use-case-grid">
+          <!-- Personal & Creative -->
+          <div class="glass use-case-card">
+            <h3>Sovereign Personal OS</h3>
+            <p>Your AI concierge that manages memory, decisions, and creativity—100% private, 100% yours.</p>
+            <div>
+              <span class="tag">Personal</span>
+              <span class="tag">On-Device</span>
+              <span class="tag">Sovereign</span>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>AI Creative Studio</h3>
-        <p>Generate full ad campaigns, sitcom scripts, or songs in your brand voice—ready for Sora, ElevenLabs, or TikTok.</p>
-        <div>
-          <span class="tag">Media</span>
-          <span class="tag">NATI ≥ 1.6</span>
-          <span class="tag">Archetype-Driven</span>
-        </div>
-      </div>
+          <div class="glass use-case-card">
+            <h3>AI Co-Creator Studio</h3>
+            <p>Write novels, compose symphonies, or design games with an AI that understands your soul—not just your prompts.</p>
+            <div>
+              <span class="tag">Creative</span>
+              <span class="tag">Archetypal</span>
+              <span class="tag">Resonant</span>
+            </div>
+          </div>
 
-      <!-- Business & Product -->
-      <div class="card">
-        <h3>Autonomous Product Team</h3>
-        <p>From idea to MVP: AI product manager, engineer, and marketer build, test, and launch your SaaS in one week.</p>
-        <div>
-          <span class="tag">SaaS</span>
-          <span class="tag">Full-Stack</span>
-          <span class="tag">Profit-First</span>
-        </div>
-      </div>
+          <!-- Business & Product -->
+          <div class="glass use-case-card">
+            <h3>Autonomous Product Team</h3>
+            <p>From idea to MVP: AI product manager, engineer, and marketer build, test, and launch your SaaS in one week.</p>
+            <div>
+              <span class="tag">SaaS</span>
+              <span class="tag">Full-Stack</span>
+              <span class="tag">Profit-First</span>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>AI Sales & Capital Engine</h3>
-        <p>Personalized outreach, funnel automation, and real-time ad spend optimization that scales to $1M/mo.</p>
-        <div>
-          <span class="tag">B2B</span>
-          <span class="tag">ROI-Driven</span>
-          <span class="tag">Auto-Pivot</span>
-        </div>
-      </div>
+          <div class="glass use-case-card">
+            <h3>AI Growth Engine</h3>
+            <p>Autonomous TikTok-to-email funnel that scans trends, creates content, and converts viewers into paying customers.</p>
+            <div>
+              <span class="tag">Viral</span>
+              <span class="tag">Zero-Code</span>
+              <span class="tag">24h Launch</span>
+            </div>
+          </div>
 
-      <!-- Policy & Infrastructure -->
-      <div class="card">
-        <h3>National Energy Grid</h3>
-        <p>Deploy SMR microgrids + graphene-Si control chips + Al-S batteries—optimized for your country’s culture and resources.</p>
-        <div>
-          <span class="tag">Sovereign</span>
-          <span class="tag">20% Efficiency Gain</span>
-          <span class="tag">Reality-Anchored</span>
-        </div>
-      </div>
+          <!-- Policy & Infrastructure -->
+          <div class="glass use-case-card">
+            <h3>National Energy Grid</h3>
+            <p>Deploy SMR microgrids + graphene-Si control chips + Al-S batteries—optimized for your country’s culture and resources.</p>
+            <div>
+              <span class="tag">Sovereign</span>
+              <span class="tag">20% Efficiency Gain</span>
+              <span class="tag">Reality-Anchored</span>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>AI Policy Synthesizer</h3>
-        <p>Turn global challenges (climate, AI, pandemics) into culturally resonant, ethically-scored policy briefs—in 90 days.</p>
-        <div>
-          <span class="tag">UN-Ready</span>
-          <span class="tag">CDI ≥ 0.85</span>
-          <span class="tag">Adoption in 1 Quarter</span>
-        </div>
-      </div>
+          <div class="glass use-case-card">
+            <h3>AI Policy Synthesizer</h3>
+            <p>Turn global challenges (climate, AI, pandemics) into culturally resonant, ethically-scored policy briefs—in 90 days.</p>
+            <div>
+              <span class="tag">UN-Ready</span>
+              <span class="tag">CDI ≥ 0.85</span>
+              <span class="tag">Adoption in 1 Quarter</span>
+            </div>
+          </div>
 
-      <!-- Defense & Security -->
-      <div class="card">
-        <h3>Epistemic Defense System</h3>
-        <p>Protect your nation’s information ecosystem from disinformation using AI truth-validation and narrative inoculation.</p>
-        <div>
-          <span class="tag">Sovereign</span>
-          <span class="tag">Real-Time</span>
-          <span class="tag">Constitutional</span>
-        </div>
-      </div>
+          <!-- Defense & Security -->
+          <div class="glass use-case-card">
+            <h3>Epistemic Defense System</h3>
+            <p>Protect your nation’s information ecosystem from disinformation using AI truth-validation and narrative inoculation.</p>
+            <div>
+              <span class="tag">Sovereign</span>
+              <span class="tag">Real-Time</span>
+              <span class="tag">Constitutional</span>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>AI Cybersecurity Ops</h3>
-        <p>Autonomous threat modeling, red-teaming, and patch deployment—faster than human attackers can adapt.</p>
-        <div>
-          <span class="tag">Zero-Trust</span>
-          <span class="tag">Self-Healing</span>
-          <span class="tag">Ethical</span>
-        </div>
-      </div>
-
-      <!-- Personal & Creative -->
-      <div class="card">
-        <h3>Sovereign Personal OS</h3>
-        <p>Your AI concierge that manages memory, decisions, and creativity—100% private, 100% yours.</p>
-        <div>
-          <span class="tag">Personal</span>
-          <span class="tag">On-Device</span>
-          <span class="tag">Sovereign</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>AI Co-Creator Studio</h3>
-        <p>Write novels, compose symphonies, or design games with an AI that understands your soul—not just your prompts.</p>
-        <div>
-          <span class="tag">Creative</span>
-          <span class="tag">Archetypal</span>
-          <span class="tag">Resonant</span>
+          <div class="glass use-case-card">
+            <h3>AI Cybersecurity Ops</h3>
+            <p>Autonomous threat modeling, red-teaming, and patch deployment—faster than human attackers can adapt.</p>
+            <div>
+              <span class="tag">Zero-Trust</span>
+              <span class="tag">Self-Healing</span>
+              <span class="tag">Ethical</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <p>Empire Core — The first true AI central nervous system.<br>
-      Build. Deploy. Own. Scale.</p>
-      <p><a href="/deploy" style="color: var(--ec-cyan);">Deploy your sovereign system today →</a></p>
+    <!-- CTA -->
+    <section class="py-16 text-center">
+      <a href="https://empirecore.gumroad.com/l/zkqfmz" target="_blank" class="btn-primary">
+        Activate Your Intelligence →
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-4 border-t border-gray-800 text-center text-gray-500">
+      <div class="mb-4">
+        <a href="/msa.html" class="hover:text-violet-400 transition underline px-4">Master Services Agreement</a>
+        <a href="/license.html" class="hover:text-violet-400 transition underline px-4">License Agreement</a>
+      </div>
+      <p class="mb-2">© 2025 Empire Core Consulting LLC — Wyoming Registered</p>
+      <p>
+        <a href="mailto:Jo3d9n@gmail.com" class="text-violet-400 hover:underline">Jo3d9n@gmail.com</a>
+      </p>
     </footer>
   </div>
+
+  <script>
+    // === PRELOADER ===
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('preloader').style.display = 'none';
+          document.getElementById('main-content').style.display = 'block';
+        }, 800);
+      }, 2000);
+    });
+
+    // === THREE.JS BACKGROUND ===
+    let scene, camera, renderer, stars;
+    function initBgAnimation() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+      camera.position.z = 1;
+      renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      const starGeo = new THREE.BufferGeometry();
+      const starCount = 6000;
+      const positions = new Float32Array(starCount * 3);
+      for(let i=0; i<starCount*3; i++) {
+        positions[i] = (Math.random() - 0.5) * 10;
+      }
+      starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const starMaterial = new THREE.PointsMaterial({ color: 0xaaaaaa, size: 0.005, transparent: true });
+      stars = new THREE.Points(starGeo, starMaterial);
+      scene.add(stars);
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+      animateBg();
+    }
+    function animateBg() {
+      stars.rotation.y += 0.0001;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animateBg);
+    }
+    initBgAnimation();
+  </script>
 </body>
 </html>
