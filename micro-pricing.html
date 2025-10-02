@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empire Core | Micro Services Pricing</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --glow: #0ff;
+      --bg-start: #0a0914;
+      --bg-end: #110e23;
+      --text: #e2e8f0;
+      --glass-bg: rgba(17, 14, 35, 0.5);
+      --glass-border: rgba(139, 92, 246, 0.15);
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+    }
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 1.5rem;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--violet), var(--pink));
+      color: white;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 35px rgba(139, 92, 246, 0.8);
+    }
+    .turnaround {
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: var(--text);
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    <!-- HEADER -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Micro Services</h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Professional-grade intelligence. À la carte. Quick turnaround. No fluff.
+      </p>
+    </div>
+
+    <!-- SERVICE GRID -->
+    <div class="service-grid">
+      <!-- Strategic Hook -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-cyan-400">Strategic Hook</h3>
+        <p class="text-gray-400 mb-4">Viral hook + 3 content angles (TikTok/LinkedIn/Reels)</p>
+        <div class="turnaround">Delivered in <24 hrs</div>
+        <div class="price">$97</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Strategic Hook" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- Reality-Anchor Audit -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-violet-400">Reality-Anchor Audit</h3>
+        <p class="text-gray-400 mb-4">Validate your idea against 3 empirical anchors</p>
+        <div class="turnaround">Delivered in <48 hrs</div>
+        <div class="price">$197</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Reality-Anchor Audit" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- Career Lattice Map -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-pink-400">Career Lattice Map</h3>
+        <p class="text-gray-400 mb-4">Cross-domain expert map (5+ fields) for your problem</p>
+        <div class="turnaround">Delivered in <24 hrs</div>
+        <div class="price">$147</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Career Lattice Map" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- Archetype Narrative -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-cyan-400">Archetype Narrative</h3>
+        <p class="text-gray-400 mb-4"> WiseOne + Overthinker story for your brand</p>
+        <div class="turnaround">Delivered in <48 hrs</div>
+        <div class="price">$247</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Archetype Narrative" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- Funnel Blueprint -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-violet-400">Funnel Blueprint</h3>
+        <p class="text-gray-400 mb-4">$7 → $497 funnel map (offer, email, ad, landing page)</p>
+        <div class="turnaround">Delivered in <72 hrs</div>
+        <div class="price">$297</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Funnel Blueprint" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- Go-to-Market Sprint -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-pink-400">Go-to-Market Sprint</h3>
+        <p class="text-gray-400 mb-4">Full launch plan (content, ads, influencers, KPIs)</p>
+        <div class="turnaround">Delivered in 5 days</div>
+        <div class="price">$797</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Go-to-Market Sprint" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- Ethical Risk Scan -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-cyan-400">Ethical Risk Scan</h3>
+        <p class="text-gray-400 mb-4">Flag predatory pricing, dark patterns, compliance gaps</p>
+        <div class="turnaround">Delivered in <24 hrs</div>
+        <div class="price">$127</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Ethical Risk Scan" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+
+      <!-- CDI Score Report -->
+      <div class="glass">
+        <h3 class="text-xl font-bold mb-2 text-violet-400">CDI Score Report</h3>
+        <p class="text-gray-400 mb-4">Composite Diversity Index (0–1) + improvement plan</p>
+        <div class="turnaround">Delivered in <48 hrs</div>
+        <div class="price">$177</div>
+        <a href="mailto:Jo3d9n@gmail.com?subject=CDI Score Report" class="btn btn-primary w-full mt-4">Order Now</a>
+      </div>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="text-center mt-16">
+      <h2 class="text-2xl font-bold mb-6 gradient-text">Need It Faster?</h2>
+      <div class="glass inline-block p-6">
+        <p class="mb-4">Add priority processing to any service:</p>
+        <ul class="text-left space-y-2 mb-6 text-gray-300">
+          <li>✅ +$47 for **24h priority**</li>
+          <li>✅ +$97 for **steward call + 24h delivery**</li>
+        </ul>
+        <a href="mailto:Jo3d9n@gmail.com?subject=Priority Processing" class="btn btn-outline">Request Priority</a>
+      </div>
+    </div>
+
+    <!-- FOOTER LINK -->
+    <div class="text-center mt-12">
+      <a href="/" class="text-cyan-400 hover:underline">← Back to Empire Core</a>
+    </div>
+  </div>
+</body>
+</html>
