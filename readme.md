@@ -54,8 +54,8 @@ Empire Core offers **modular, à la carte intelligence services** — all realit
 |--------|-------------|------------|-------|
 | **Strategic Hook** | Viral hook + 3 content angles (TikTok/LinkedIn/Reels) | <24 hrs | **$97** |
 | **Reality-Anchor Audit** | Validate your idea against 3 empirical anchors | <48 hrs | **$197** |
-| **Career Lattice Map** | Cross-domain expert map (5+ fields) for your problem | <24 hrs | **$147** |
-| **Archetype Narrative** | Chaotic Aunt + Overthinker story for your brand | <48 hrs | **$247** |
+| **Career Map** | Cross-domain expert map (5+ fields) for your problem | <24 hrs | **$147** |
+| **Archetype Narrative** | WiseOne + Overthinker story for your brand | <48 hrs | **$247** |
 | **Funnel Blueprint** | $7 → $497 funnel map (offer, email, ad, landing page) | <72 hrs | **$297** |
 | **Go-to-Market Sprint** | Full launch plan (content, ads, influencers, KPIs) | 5 days | **$797** |
 | **Ethical Risk Scan** | Flag predatory pricing, dark patterns, compliance gaps | <24 hrs | **$127** |
