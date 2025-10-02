@@ -3,230 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Master Services Agreement | Empire Core Consulting LLC</title>
-  <meta name="description" content="Master Services Agreement (MSA) for services provided by Empire Core Consulting LLC.">
+  <title>Empire Core | Master Services Agreement</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --bg-start: #0a0914;
+      --bg-end: #110e23;
+      --text: #e2e8f0;
+      --glass-bg: rgba(17, 14, 35, 0.5);
+      --glass-border: rgba(139, 92, 246, 0.15);
+    }
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, #0c0a1a 0%, #1a1633 100%);
-      color: #e2e8f0;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+      line-height: 1.6;
     }
     .glass {
-      background: rgba(25, 22, 45, 0.65);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(129, 140, 248, 0.2);
-      border-radius: 16px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
       padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #8b5cf6, #ec4899, #22d3ee);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
     }
     h1, h2, h3 {
       font-weight: 700;
-      margin-top: 1.5rem;
       margin-bottom: 1rem;
     }
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.875rem; color: #c7d2fe; }
-    h3 { font-size: 1.5rem; color: #a5b4fc; }
-    ul {
-      padding-left: 1.5rem;
+    h1 { font-size: 2.5rem; color: var(--cyan); }
+    h2 { font-size: 1.8rem; color: var(--violet); }
+    h3 { font-size: 1.4rem; color: var(--pink); }
+    p, li {
       margin-bottom: 1rem;
-      list-style-type: disc;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    blockquote {
-      border-left: 3px solid #8b5cf6;
-      padding-left: 1rem;
-      margin: 1.5rem 0;
       color: #cbd5e1;
-      font-style: italic;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
+    .highlight {
+      color: var(--cyan);
+      font-weight: 600;
     }
-    th, td {
-      border: 1px solid rgba(129, 140, 248, 0.3);
-      padding: 0.75rem;
-      text-align: left;
-    }
-    th {
-      background-color: rgba(129, 140, 248, 0.1);
-    }
-    .signature-line {
-      border-top: 1px solid #4b5563;
-      width: 300px;
-      margin-top: 2rem;
+    .signature {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--glass-border);
     }
   </style>
 </head>
-<body class="min-h-screen py-12 px-4">
+<body class="py-12 px-4">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold mb-4">
-        <span class="gradient-text">Master Services Agreement</span>
-      </h1>
-      <p class="text-lg text-gray-300">
-        Between Empire Core Consulting LLC and Client
-      </p>
-    </div>
-
     <div class="glass">
-      <p>This Master Services Agreement ("Agreement") is entered into as of the Effective Date by and between:<br>
-      <strong>Empire Core Consulting LLC</strong>, a Wyoming limited liability company ("Provider"), and<br>
-      <strong>[Client Name]</strong>, ("Client").</p>
-    </div>
+      <h1>Master Services Agreement</h1>
+      <p><strong>Effective Date:</strong> Upon client acceptance</p>
+      <p><strong>Parties:</strong> Empire Core Consulting LLC (“Provider”) and the Client (“Client”)</p>
 
-    <div class="glass">
       <h2>1. Services</h2>
-      <p>Provider delivers AI-augmented professional services through a <strong>human-AI research duo</strong> (Provider + proprietary AI system). Services include:</p>
-      <h3>A. Diagnostic Tier</h3>
-      <ul>
-        <li><strong>Forensic System Audit</strong>: Deep diagnostic report identifying technical, strategic, or operational gaps.</li>
-        <li><strong>Deliverable</strong>: PDF/interactive report with prioritized findings, root-cause analysis, and ROI projections.</li>
-        <li><strong>Turnaround</strong>: 3-7 business days.</li>
-      </ul>
-      <h3>B. Implementation Tier</h3>
-      <ul>
-        <li><strong>AI-Co-Developed Build</strong>: Custom software, automation, or system architecture based on Diagnostic Tier output.</li>
-        <li><strong>Deliverable</strong>: Deployed solution + documentation + 14-day bug-fix warranty.</li>
-        <li><strong>Turnaround</strong>: 5-20 business days (scoped per SOW).</li>
-      </ul>
-      <h3>C. Licensing Tier</h3>
-      <ul>
-        <li><strong>Software License</strong>: Non-exclusive, non-transferable license to use Provider's proprietary tools (e.g., ANI-TOE Engine derivatives).</li>
-        <li><strong>Term</strong>: Monthly/annual subscription. Auto-renews unless canceled 30 days prior.</li>
-      </ul>
-      <blockquote>All work is performed by <strong>Jordan Pol (human)</strong> in active collaboration with <strong>proprietary AI agents</strong>. Final output is <strong>human-reviewed, validated, and approved</strong>.</blockquote>
-    </div>
+      <p>Provider shall deliver strategic intelligence services as selected by Client from the following catalog:</p>
 
-    <div class="glass">
-        <h2>2. Fees & Payment</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tier</th>
-                    <th>Pricing Model</th>
-                    <th>Payment Terms</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Diagnostic</strong></td>
-                    <td>Fixed fee: $1,500 - $5,000</td>
-                    <td>100% upfront</td>
-                </tr>
-                <tr>
-                    <td><strong>Implementation</strong></td>
-                    <td>Fixed fee: $5,000 - $25,000</td>
-                    <td>50% upfront, 50% on delivery</td>
-                </tr>
-                <tr>
-                    <td><strong>Licensing</strong></td>
-                    <td>$299 - $2,499/month</td>
-                    <td>Billed monthly in advance</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>Late payments incur <strong>1.5% monthly interest</strong>.</p>
-        <p>All fees are <strong>non-refundable</strong> except as required by law.</p>
-    </div>
-
-    <div class="glass">
-      <h2>3. Intellectual Property</h2>
-      <h3>A. Pre-Existing IP</h3>
-      <p>Provider retains <strong>100% ownership</strong> of its AI systems, frameworks, and tools (e.g., "Empire Core System," derivatives). Client receives a <strong>limited license</strong> to use deliverables for internal business purposes only.</p>
-      <h3>B. Custom Deliverables</h3>
-      <p>Upon <strong>full payment</strong>, Client receives a <strong> limited, worldwide, non-exclusive license</strong> to use custom-built software. <strong>Source code</strong> is <strong>not transferred</strong> unless explicitly stated in a Statement of Work (SOW) at additional cost.</p>
-      <h3>C. AI-Generated Content</h3>
-      <p>All AI-assisted output is <strong>human-curated, edited, and validated</strong> by Provider. Provider warrants that deliverables <strong>do not infringe third-party IP</strong>.</p>
-    </div>
-
-    <div class="glass">
-      <h2>4. Client Responsibilities</h2>
-      <p>Client shall:</p>
-      <ul>
-        <li>Provide timely access to systems/data required for diagnostics.</li>
-        <li>Designate a single point of contact for feedback/approvals.</li>
-        <li>Not reverse-engineer, resell, or redistribute deliverables.</li>
+      <h3>Tiered Service Packages</h3>
+      <ul class="list-disc pl-5 mb-4">
+        <li><span class="highlight">Strategic Diagnostic</span> ($1,050): Full forensic audit + reality-anchored strategy dossier. <strong>Turnaround: 3–7 business days.</strong></li>
+        <li><span class="highlight">Rapid Build Sprint</span> ($3,500): 30-day MVP build (web app, funnel, campaign). <strong>Turnaround: 30 calendar days.</strong></li>
+        <li><span class="highlight">Full Implementation</span> ($17,500): End-to-end product + go-to-market system. <strong>Turnaround: 60 calendar days.</strong></li>
+        <li><span class="highlight">Licensing</span> ($299/mo first 3 months): Monthly access to Empire Core engine + intelligence reports. <strong>Turnaround: Ongoing.</strong></li>
+        <li><span class="highlight">Elite Retainer</span> ($7,000/mo first month): Dedicated AI-human team. <strong>Turnaround: Weekly delivery.</strong></li>
       </ul>
-    </div>
 
-    <div class="glass">
+      <h3>Micro-Services (À La Carte)</h3>
+      <ul class="list-disc pl-5 mb-4">
+        <li><span class="highlight">Strategic Hook</span> ($97): Viral hook + 3 content angles. <strong>Turnaround: <24 hours.</strong></li>
+        <li><span class="highlight">Reality-Anchor Audit</span> ($197): Validate idea against empirical anchors. <strong>Turnaround: <48 hours.</strong></li>
+        <li><span class="highlight">Career Lattice Map</span> ($147): Cross-domain expert map. <strong>Turnaround: <24 hours.</strong></li>
+        <li><span class="highlight">Archetype Narrative</span> ($247): Chaotic Aunt + Overthinker story. <strong>Turnaround: <48 hours.</strong></li>
+        <li><span class="highlight">Funnel Blueprint</span> ($297): $7 → $497 funnel map. <strong>Turnaround: <72 hours.</strong></li>
+        <li><span class="highlight">Go-to-Market Sprint</span> ($797): Full launch plan. <strong>Turnaround: 5 business days.</strong></li>
+        <li><span class="highlight">Ethical Risk Scan</span> ($127): Flag dark patterns, compliance gaps. <strong>Turnaround: <24 hours.</strong></li>
+        <li><span class="highlight">CDI Score Report</span> ($177): Composite Diversity Index + improvement plan. <strong>Turnaround: <48 hours.</strong></li>
+      </ul>
+
+      <h2>2. Deliverables</h2>
+      <p>All services include:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Reality-anchored, hallucination-free strategic output</li>
+        <li>PDF dossier + private dashboard access</li>
+        <li>Human-reviewed and audited intelligence</li>
+        <li>30-day support for clarifications</li>
+      </ul>
+
+      <h2>3. Payment</h2>
+      <p>Full payment is due upon engagement. All prices are in USD. Discounts are applied at time of invoice.</p>
+
+      <h2>4. Intellectual Property</h2>
+      <p>Client receives a <span class="highlight">non-exclusive, worldwide, perpetual license</span> to use deliverables for their business. The underlying Empire Core Quantum OS engine, methodology, and architecture remain the <span class="highlight">sole and exclusive property of Empire Core Consulting LLC</span>. Reverse engineering, scraping, or replication is strictly prohibited.</p>
+
       <h2>5. Confidentiality</h2>
-      <p>Both parties agree to protect <strong>Confidential Information</strong> (e.g., business logic, system architecture, client data). This obligation survives <strong>3 years</strong> post-termination.</p>
-    </div>
+      <p>Provider treats all Client information as confidential. Client agrees not to disclose the engine’s outputs as their own proprietary methodology.</p>
 
-    <div class="glass">
-      <h2>6. Disclaimers & Limitations</h2>
-      <h3>A. AI Transparency</h3>
-      <blockquote>Provider uses <strong>proprietary AI agents</strong> to accelerate research, analysis, and development. All output is <strong>human-supervised</strong>. AI is a tool—not a legal entity—and <strong>Provider assumes full responsibility</strong> for final deliverables.</blockquote>
-      <h3>B. Warranty</h3>
-      <p>Services performed with <strong>professional diligence</strong>. No warranty for:</p>
-      <ul>
-        <li>Third-party integrations</li>
-        <li>Client-modified deliverables</li>
-        <li>Force majeure events</li>
-      </ul>
-      <h3>C. Liability Cap</h3>
-      <p>Provider's total liability is capped at <strong>fees paid by Client in the prior 6 months</strong>. No liability for indirect, consequential, or punitive damages.</p>
-    </div>
+      <h2>6. Limitation of Liability</h2>
+      <p>Provider’s liability is limited to the amount paid by Client. Provider does not guarantee specific business outcomes.</p>
 
-    <div class="glass">
-      <h2>7. Term & Termination</h2>
-      <ul>
-        <li><strong>Term</strong>: 12 months (auto-renews monthly for Licensing Tier).</li>
-        <li>Either party may terminate <strong>for cause</strong> with 15 days written notice.</li>
-        <li>Upon termination, Client pays for all completed work and licenses terminate.</li>
-      </ul>
-    </div>
+      <h2>7. Governing Law</h2>
+      <p>This Agreement is governed by the laws of the State of Wyoming, USA.</p>
 
-    <div class="glass">
-      <h2>8. Governing Law</h2>
-      <p>Governed by laws of <strong>Wyoming</strong>. Disputes resolved in <strong>federal or state courts in Laramie County, Wyoming</strong>.</p>
-    </div>
-
-    <div class="glass">
-        <h2>9. Miscellaneous</h2>
-        <ul>
-            <li><strong>Notices</strong>: Sent via email to addresses on file.</li>
-            <li><strong>Amendments</strong>: Must be in writing and signed by both parties.</li>
-            <li><strong>Entire Agreement</strong>: This Agreement supersedes all prior discussions.</li>
-            <li><strong>Assignment</strong>: Client may not assign this Agreement without consent. Provider may assign to affiliates.</li>
-        </ul>
-    </div>
-
-    <div class="glass text-center">
-      <div class="flex justify-between mb-12">
-        <div>
-          <div class="signature-line mx-auto mb-2"></div>
-          <p><strong>Jordan Pol</strong></p>
-          <p>President & CEO, Empire Core Consulting LLC</p>
-        </div>
-        <div>
-          <div class="signature-line mx-auto mb-2"></div>
-          <p><strong>[Client Name]</strong></p>
-          <p>Title: ___________________</p>
-        </div>
+      <div class="signature">
+        <p>By engaging Empire Core Consulting LLC, Client agrees to these terms.</p>
+        <p><strong>Empire Core Consulting LLC</strong><br>
+        Jordan Pol, President & CEO<br>
+        Jo3d9n@gmail.com</p>
       </div>
-      <p><strong>Date:</strong> ___________________</p>
     </div>
 
-    <footer class="text-center text-gray-500 mt-12">
-      <p>© 2025 Empire Core Consulting LLC — Wyoming Registered</p>
-    </footer>
+    <div class="text-center">
+      <a href="/" class="text-cyan-400 hover:underline">← Return to Empire Core</a>
+    </div>
   </div>
 </body>
 </html>
