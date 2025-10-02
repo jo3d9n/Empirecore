@@ -3,176 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empire Core License Agreement | Empire Core Consulting LLC</title>
-  <meta name="description" content="License terms for Empire Core’s Narrow AI Operating System and deliverables.">
+  <title>Empire Core | Software License Agreement</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --bg-start: #0a0914;
+      --bg-end: #110e23;
+      --text: #e2e8f0;
+      --glass-bg: rgba(17, 14, 35, 0.5);
+      --glass-border: rgba(139, 92, 246, 0.15);
+    }
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, #0c0a1a 0%, #1a1633 100%);
-      color: #e2e8f0;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+      line-height: 1.6;
     }
     .glass {
-      background: rgba(25, 22, 45, 0.65);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(129, 140, 248, 0.2);
-      border-radius: 16px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
       padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #8b5cf6, #ec4899, #22d3ee);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
     }
     h1, h2, h3 {
       font-weight: 700;
-      margin-top: 1.5rem;
       margin-bottom: 1rem;
     }
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.875rem; color: #c7d2fe; }
-    h3 { font-size: 1.5rem; color: #a5b4fc; }
-    ul, ol {
-      padding-left: 1.5rem;
+    h1 { font-size: 2.5rem; color: var(--cyan); }
+    h2 { font-size: 1.8rem; color: var(--violet); }
+    h3 { font-size: 1.4rem; color: var(--pink); }
+    p, li {
       margin-bottom: 1rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    blockquote {
-      border-left: 3px solid #8b5cf6;
-      padding-left: 1rem;
-      margin: 1.5rem 0;
       color: #cbd5e1;
-      font-style: italic;
     }
-    .signature-line {
-      border-top: 1px solid #4b5563;
-      width: 300px;
-      margin-top: 2rem;
+    .highlight {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .warning {
+      background: rgba(236, 72, 153, 0.1);
+      border-left: 4px solid var(--pink);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .signature {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--glass-border);
     }
   </style>
 </head>
-<body class="min-h-screen py-12 px-4">
+<body class="py-12 px-4">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold mb-4">
-        <span class="gradient-text">Empire Core License Agreement</span>
-      </h1>
-      <p class="text-lg text-gray-300">
-        Governing use of Quantum OS v2 and all deliverables
-      </p>
-    </div>
-
     <div class="glass">
-      <p>
-        This License Agreement (“Agreement”) is entered into between:<br>
-        <strong>Empire Core Consulting LLC</strong>, a Wyoming limited liability company (“Provider”), and<br>
-        <strong>[Licensee Name]</strong> (“Licensee”).
-      </p>
-    </div>
+      <h1>Software License Agreement</h1>
+      <p><strong>Effective Date:</strong> Upon client acceptance</p>
+      <p><strong>Parties:</strong> Empire Core Consulting LLC (“Licensor”) and the Client (“Licensee”)</p>
 
-    <div class="glass">
-      <h2>1. Grant of License</h2>
-      <p>Provider grants Licensee a <strong>non-exclusive, non-transferable, worldwide, limited license</strong> to use the <strong>Quantum OS </strong> platform and its outputs for internal business purposes only.</p>
-      <blockquote>
-        💡 <strong>You are not buying software. You are activating intelligence.</strong>
-      </blockquote>
-    </div>
+      <h2>1. Limited License Grant</h2>
+      <p>Licensor grants Licensee a <span class="highlight">non-exclusive, non-transferable, revocable license</span> to access and use the Empire Core Quantum OS intelligence engine <strong>solely through services provided by Empire Core Consulting LLC</strong>. The underlying software, architecture, and methodology (<span class="highlight">“the Software”</span>) is <strong>never provided directly</strong to Licensee in source or object code form.</p>
 
-    <div class="glass">
-      <h2>2. Scope & Limitations</h2>
-      <ul>
-        <li><strong>What you get</strong>: Access to the Narrow AI Operating System + all AI-generated outputs (reports, code, insights).</li>
-        <li><strong>What you don’t get</strong>:
-          <ul>
-            <li>No source code (unless explicitly licensed in a Statement of Work).</li>
-            <li>No right to resell, sublicense, or reverse-engineer.</li>
-            <li>No ownership of Provider’s IP (AI models, frameworks, tools).</li>
-          </ul>
-        </li>
+      <h2>2. Prohibition on Direct Access</h2>
+      <p>Licensee <span class="highlight">shall not</span>:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Attempt to access, reverse engineer, decompile, or disassemble the Software</li>
+        <li>Scrape, crawl, or extract outputs for the purpose of replicating the engine</li>
+        <li>Use automated tools to probe or stress-test the system beyond normal service use</li>
+        <li>Share, resell, or redistribute any output as a substitute for the licensed service</li>
       </ul>
-    </div>
 
-    <div class="glass">
-      <h2>3. Intellectual Property</h2>
-      <h3>A. Pre-Existing IP</h3>
-      <p>Provider retains <strong>100% ownership</strong> of Quantum OS v2, ANI-TOE Engine, and all proprietary systems.</p>
-
-      <h3>B. Custom Deliverables</h3>
-      <p>Upon full payment, Licensee receives a <strong>limited, non-exclusive license</strong> to use custom-built software. Source code is not transferred unless stated in a SOW.</p>
-
-      <h3>C. AI-Generated Content</h3>
-      <p>All output is <strong>human-curated, edited, and validated</strong>. Provider warrants it does not infringe third-party IP.</p>
-    </div>
-
-    <div class="glass">
-      <h2>4. Human-AI Duo Guarantee</h2>
-      <p>All deliverables are <strong>human-reviewed, validated, and approved</strong> by Jordan Pol or his designated human agent.<br>
-      <strong>AI is the tool. You are the client. We are the stewards.</strong></p>
-    </div>
-
-    <div class="glass">
-      <h2>5. Fees & Payment</h2>
-      <ul>
-        <li>Diagnostic Tier: <strong>$1,500–$5,000</strong> (100% upfront)</li>
-        <li>Implementation Tier: <strong>$5,000–$25,000</strong> (50% upfront, 50% on delivery)</li>
-        <li>Licensing Tier: <strong>$299–$2,499/month</strong> (billed monthly in advance)</li>
-        <li>Late payments incur <strong>1.5% monthly interest</strong>.</li>
-        <li>All fees are <strong>non-refundable</strong> except as required by law.</li>
-      </ul>
-    </div>
-
-    <div class="glass">
-      <h2>6. Term & Termination</h2>
-      <ul>
-        <li><strong>Term</strong>: 12 months (auto-renews monthly for Licensing Tier).</li>
-        <li>Either party may terminate <strong>for cause</strong> with 15 days written notice.</li>
-        <li>Upon termination:
-          <ul>
-            <li>Licensee pays for all completed work.</li>
-            <li>Licenses terminate; Licensee ceases use of software.</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div class="glass">
-      <h2>7. Governing Law</h2>
-      <p>Governed by laws of <strong>Wyoming</strong>.<br>
-      Disputes resolved in <strong>federal or state courts in Laramie County, Wyoming</strong>.</p>
-    </div>
-
-    <div class="glass text-center">
-      <p class="mb-8">
-        <strong>This is not a contract. This is a covenant.</strong><br>
-        You are not a customer. You are a co-architect.
-      </p>
-
-      <div class="flex justify-between mb-12">
-        <div>
-          <div class="signature-line mx-auto mb-2"></div>
-          <p><strong>Jordan Pol</strong></p>
-          <p>President & CEO</p>
-          <p>Empire Core Consulting LLC</p>
-        </div>
-        <div>
-          <div class="signature-line mx-auto mb-2"></div>
-          <p><strong>[Licensee Name]</strong></p>
-          <p>Title: ___________________</p>
-        </div>
+      <div class="warning">
+        <h3>INFRINGEMENT DEPOSIT REQUIREMENT</h3>
+        <p>Any attempt to directly access, replicate, or steal the Software — whether through technical, legal, or social means — constitutes a material breach of this agreement.</p>
+        <p><span class="highlight">Upon first notice of such breach, Licensee shall immediately pay a deposit of $100,000 (USD)</span> to cover:</p>
+        <ul class="list-disc pl-5">
+          <li>Estimated damages for intellectual property theft</li>
+          <li>Legal retainer for litigation and injunctive relief</li>
+          <li>Forensic investigation and enforcement costs</li>
+        </ul>
+        <p>This deposit is <strong>non-refundable</strong and <strong>in addition to</strong> any final damages awarded by a court of competent jurisdiction.</p>
       </div>
 
-      <p><strong>Date:</strong> ___________________</p>
+      <h2>3. Intellectual Property</h2>
+      <p>The Software, including all algorithms, career lattice structures, reality-anchoring mechanisms, and archetypal narrative systems, is the <span class="highlight">sole and exclusive property of Empire Core Consulting LLC</span>. This agreement grants no ownership rights.</p>
+
+      <h2>4. Enforcement & Remedies</h2>
+      <p>Licensor reserves the right to:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Terminate service immediately upon suspected breach</li>
+        <li>Pursue injunctive relief without bond</li>
+        <li>Seek statutory damages under 18 U.S. Code § 1832 (Economic Espionage Act)</li>
+        <li>Recover attorney’s fees and costs of enforcement</li>
+      </ul>
+
+      <h2>5. Governing Law</h2>
+      <p>This Agreement is governed by the laws of the State of Wyoming, USA. Any legal action must be brought in the federal or state courts located in Wyoming.</p>
+
+      <div class="signature">
+        <p>By engaging Empire Core Consulting LLC, Licensee acknowledges and agrees to these terms.</p>
+        <p><strong>Empire Core Consulting LLC</strong><br>
+        Jordan Pol, President & CEO<br>
+        Jo3d9n@gmail.com</p>
+      </div>
     </div>
 
-    <footer class="text-center text-gray-500 mt-12">
-      <p>© 2025 Empire Core Consulting LLC — Wyoming Registered</p>
-    </footer>
+    <div class="text-center">
+      <a href="/" class="text-cyan-400 hover:underline">← Return to Empire Core</a>
+    </div>
   </div>
 </body>
 </html>
