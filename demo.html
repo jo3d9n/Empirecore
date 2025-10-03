@@ -4,27 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empire Core Quantum OS | Gen Z Battle Royale</title>
+
+  <!-- Tailwind + Fonts (only once!) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --violet: #8b5cf6;
       --pink: #ec4899;
       --cyan: #22d3ee;
-      --bg-start: #0c0a1a;
-      --bg-end: #1a1633;
+      --glow: #0ff;
+      --bg-start: #0a0914;
+      --bg-end: #110e23;
       --text: #e2e8f0;
       --glass-bg: rgba(25, 22, 45, 0.65);
       --glass-border: rgba(139, 92, 246, 0.2);
     }
+
     body {
       font-family: 'Space Grotesk', sans-serif;
       background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
       color: var(--text);
       overflow-x: hidden;
     }
+
     .glass {
       background: var(--glass-bg);
       backdrop-filter: blur(16px);
@@ -32,12 +38,14 @@
       border-radius: 24px;
       padding: 1.5rem;
     }
+
     .gradient-text {
       background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .btn-primary {
       background: linear-gradient(90deg, var(--violet), var(--pink));
       color: white;
@@ -48,12 +56,15 @@
       cursor: pointer;
       box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
     }
+
     .hidden { display: none; }
+
     #strategy-output {
       font-family: monospace;
       white-space: pre-wrap;
       line-height: 1.6;
     }
+
     .code-block {
       background: #000;
       color: #e2e8f0;
@@ -64,12 +75,58 @@
       font-family: 'Fira Code', monospace;
       font-size: 0.85rem;
     }
+
     .comment { color: #60a5fa; }
     .keyword { color: #f472b6; }
     .function { color: #34d399; }
   </style>
 </head>
 <body class="min-h-screen py-12 px-4">
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="flex items-center">
+      <svg class="w-10 h-10 mr-4 animate-spin text-violet-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <div id="preloader-text">Synthesizing Reality<span class="cursor"></span></div>
+    </div>
+  </div>
+
+  <style>
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-start);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.8s ease;
+    }
+    #preloader-text {
+      font-size: 1.2rem;
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: var(--glow);
+      margin-left: 5px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+
   <div class="max-w-4xl mx-auto">
     <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
       The Collapse: Gen Z Battle Royale
@@ -97,7 +154,7 @@
 
     <div id="end-actions" class="hidden text-center mt-8">
       <div class="mb-6">
-        <audio id="trademark-sound" src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" preload="auto"></audio>
+        <audio id="trademark-sound" src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" preload="auto"></audio>
       </div>
       <a href="mailto:Jo3d9n@gmail.com?subject=Schedule Strategy Session" class="btn-primary inline-block mb-4 px-6 py-3">
         📅 Schedule a Strategy Session
@@ -107,7 +164,18 @@
     </div>
   </div>
 
+  <!-- PRELOADER SCRIPT (at end of body) -->
   <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('preloader').style.display = 'none';
+        }, 800);
+      }, 3000);
+    });
+
+    // Demo logic
     const strategyText = `Gen Z doesn’t want to dominate—they want to belong. The next battle royale isn’t about killing. It’s about co-survival under shared existential threat.
 
 Reality Anchor: 78% of Gen Z players quit games that feel extractive (Pew Research, 2025). They reject zero-sum dynamics. They crave meaning, collaboration, and real-world impact.
@@ -210,7 +278,7 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
 }`;
 
     let currentIndex = 0;
-    const delay = 30; // ms per character
+    const delay = 30;
 
     document.getElementById('run-demo-btn').addEventListener('click', () => {
       document.getElementById('start-screen').classList.add('hidden');
@@ -225,13 +293,10 @@ Final Insight: You’re not building a game. You’re building a digital hearth�
         currentIndex++;
         setTimeout(typeStrategy, delay);
       } else {
-        // Strategy done — show code after 1s
         setTimeout(() => {
           document.getElementById('code-output').classList.remove('hidden');
           document.getElementById('final-code').innerHTML = codeSnippet;
-          // Play trademark sound
           document.getElementById('trademark-sound').play().catch(e => console.log("Sound play blocked"));
-          // Show end actions
           setTimeout(() => {
             document.getElementById('end-actions').classList.remove('hidden');
           }, 800);
